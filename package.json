@@ -1,10 +1,12 @@
 {
-  "name": "@nickgdev/hellerui",
-  "version": "1.0.0",
+  "name": "@nicholasgalante1997/hellerui",
+  "version": "1.0.1",
   "description": "",
   "main": "lib/index.js",
   "module": "lib/index.esm.js",
-  "files": ["lib"],
+  "files": [
+    "lib"
+  ],
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watch",
