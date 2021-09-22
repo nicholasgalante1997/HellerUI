@@ -12,7 +12,7 @@ import { Button, ButtonProps } from './Button';
 export default {
   title: 'Button',
   component: Button,
-  description: `A button.`,
+  description: `A button that needs way better styling.`,
   argTypes: {
     backgroundColor: { control: 'color' },
     color: { control: 'color' },
