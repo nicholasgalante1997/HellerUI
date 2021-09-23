@@ -10,7 +10,7 @@
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watch",
-    "storybook": "start-storybook -p 6006",
+    "storybook": "start-storybook -p 6006 -c .storybook watch-css -s ./src",
     "build-storybook": "build-storybook",
     "build": "rollup -c",
     "ch-update": "npx changeset",
