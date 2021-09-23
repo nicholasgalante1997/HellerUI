@@ -1,5 +1,11 @@
 # @nicholasgalante1997/hellerui
 
+## 1.0.4
+
+### Patch Changes
+
+- 64b7353: added tooling for custom fonts, added storybook webpack config
+
 ## 1.0.2
 
 ### Patch Changes
