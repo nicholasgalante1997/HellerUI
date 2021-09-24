@@ -1,5 +1,5 @@
-import * as React from 'react';
-
+import React from 'react';
+import colors from '@/colors';
 export interface ButtonProps {
   children: React.ReactNode;
   primary?: boolean;
@@ -8,27 +8,27 @@ export interface ButtonProps {
   color?: string;
 }
 
-export const Button = ({
-    children,
-    primary = false,
-    onClick,
-    backgroundColor = '#D1D5DB',
-    color = '#1F2937',
-  }: ButtonProps): JSX.Element => {
-    const buttonStyles = {
-      fontWeight: 700,
-      padding: '10px 20px',
-      border: 0,
-      cursor: 'pointer',
-      display: 'inline-block',
-      lineHeight: 1,
-      backgroundColor: primary ? '#2563EB' : backgroundColor,
-      color: primary ? '#F3F4F6' : color,
-      fontFamily: 'Didact Gothic, sans-serif'
-    };
-    return (
-      <button type="button" onClick={onClick} style={buttonStyles}>
-        {children}
-      </button>
-    );
+export const Button: React.FC<ButtonProps> = ({
+  children,
+  primary = false,
+  onClick,
+  backgroundColor = colors.nately.lavenderGray,
+  color = '#F3F4F6',
+}) => {
+  const buttonStyles = {
+    padding: '10px 20px',
+    borderRadius: 4,
+    border: 0,
+    cursor: 'pointer',
+    display: 'inline-block',
+    lineHeight: 1,
+    backgroundColor: primary ? colors.nately.amethyst : backgroundColor,
+    color: primary ? '#F3F4F6' : color,
+    fontFamily: 'Gill Sans, sans-serif',
   };
+  return (
+    <button type="button" onClick={onClick} style={buttonStyles}>
+      {children}
+    </button>
+  );
+};
