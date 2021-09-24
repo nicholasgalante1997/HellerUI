@@ -24,7 +24,7 @@ describe('Button', () => {
     render(
       <Button color="#1E40AF" backgroundColor="#A78BFA">
         Click me
-      </Button>
+      </Button>,
     );
 
     expect(screen.getByText('Click me')).toHaveStyle({
