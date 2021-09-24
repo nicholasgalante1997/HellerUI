@@ -1,5 +1,5 @@
 import React from 'react';
-import colors from '@/colors';
+import colors from '../../colors';
 export interface ButtonProps {
   children: React.ReactNode;
   primary?: boolean;

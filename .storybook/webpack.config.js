@@ -12,7 +12,7 @@ module.exports = async ({ config }) => {
   config.resolve.extensions.push(".ts", ".tsx");
   config.resolve.alias = {
     ...config.resolve.alias,
-    "@": path.resolve(__dirname, "../src")
+    "@colors": path.resolve(__dirname, "../src/colors")
 };
   // don't forget to return the adapted config object
   return config;
