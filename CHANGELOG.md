@@ -1,5 +1,11 @@
 # @nicholasgalante1997/hellerui
 
+## 1.0.5
+
+### Patch Changes
+
+- df4f1e6: removed sass efforts (sigh) and updated readme
+
 ## 1.0.4
 
 ### Patch Changes
