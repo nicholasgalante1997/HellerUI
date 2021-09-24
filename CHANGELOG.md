@@ -1,5 +1,11 @@
 # @nicholasgalante1997/hellerui
 
+## 1.0.6
+
+### Patch Changes
+
+- 6defd4a: fixed bugs involving conflicts in aliases in rollup/webpack"
+
 ## 1.0.5
 
 ### Patch Changes
