@@ -1,0 +1,135 @@
+import { Meta } from "@storybook/addon-docs";
+
+<Meta title="HellerUI Env Setup" />
+
+<h1>HellerUI Design System Environment Setup</h1>
+
+---
+
+## Getting Started 
+
+- `git clone https://github.com/nicholasgalante1997/HellerUI` 
+- `git checkout development` **Note** there's no -b flag
+- `git pull origin development`
+
+## Basics and Env 
+
+this package uses npm for its package management, I'd highly encourage also using npm over yarn in this particular circumstance for certain version dependency ease cases.
+
+In the root directory, `npm install` 
+
+This is not a Create React App generated react app.
+This is a node initiated package. You'll notice some differences right away for what that means for project structure.
+Here is a 10,000 foot overview, top down
+
+### __mocks__
+- Will rarely ever need to adjust this file in this dir, skip it for dev work
+
+### .changeset
+- This one is *important* to understand
+- We use changesets as our version management library of choice
+    - https://www.npmjs.com/package/@changesets/cli 
+    - I highly recommend reading through these docs, it would overall take you 45 seconds.
+    - If someone besides Storybook can make a compelling case for the transition to Auto for version management msg me,
+    otherwise we will keep on with changesets until its deprecated or it kills us.
+- Understanding this folder,
+    - You will not need to change config.json
+    - In fact you'll never write to this folder at all,
+    - This folder contains auto generated files pertaining to differences in releases that our github workflow will use to sync npm to our master branch.
+    - For a better overall understanding, see <b style={{color: 'blue'}}>How Publishing Works</b>
+
+### .github 
+
+- Currently this maintains our workflows dir, which contains gh workflows for releasing new version updates to npm.
+- There are other workflows I think would be beneficial to institute, like integration test actions.
+- Workflows are written in YAML baby! Fucking love Yaml. Familiarize yourself with its syntax here: [Yaml](https://www.cloudbees.com/blog/yaml-tutorial-everything-you-need-get-started)
+- How our Release wflow works: 
+    - On pushes to master
+        - Checkout master
+        - Set up Node 14.x environment runtimes
+        - Set up internal package dependencies
+        - Changesets Publish
+            - 2 things could happen from here 
+                - If this is the initial push to master, changesets kicks off a PR to merge into master containing version specific differences for review and automatically updates the semver number.
+                - If this wflow is kicked off due to the merging of an above instantiated PR, we bundle with rollup and ship to npm 
+        - Clean up any remaining jobs
+        - Close dependencies
+
+- I would like to setup automatic releases for updates of a static storybook cloud lib,
+msg me if you'd like to spearhead that 
+
+## .storybook  <= [THIS!]
+
+Do you see that this is an h2 and all the other sections are h3s? That's how important this is.
+This is the meat and potatoes of our project. We use storybook to handle our design system's infrastructure and story generation.
+We have a mutual trust with storybook, that we will adhere to its docs, and it won't fuck us on future releases. 
+As far as you're concerned, this is Jobu and you are Cerrano.
+
+![Jobu](https://miro.medium.com/max/1400/1*V4gmqGSiiUx-_Zls2lKTjw.png)
+
+- main.js 
+    - Responsible for handling 2 things
+        - Where to look for the stories 
+        - What addons we need for our project 
+
+- preview-head.html 
+    - If we need to load any cdns or google font preconnect links, it needs to be here. 
+    - NOT FOR GLOBAL STYLES
+    - NOT FOR GLOBAL STYLES
+    - NOT A TYPO ^^ JUST DUMB IMPORTANT
+    - NOT FOR GLOBAL STYLES AGAIN
+
+- preview 
+    - for our use case, the default config for this file works. AKA dont touch it with a 40 foot pole.
+    - pretty please, not to be a dick.
+
+- webpack.config.js 
+    - config settings for how storybook bundles our stories and then represents it to us in its UI 
+
+## SRC 
+
+### /colors 
+
+- WIP lib file for our multiple color themes;
+
+### /components
+
+- Where all of the components that we build will live.
+- The naming convention here is /src/components/Component/
+- with the name of the component capitalized as the dir name.
+- each component dir will have 4 files until we can figure out how to add sass support.
+    - Component.stories.tsx
+    - Component.test.tsx
+    - Component.tsx 
+    - index.ts (entry point)
+- See <b style={{color: 'blue'}}>Creating a Component</b> for more details on what goes into each of these files 
+
+### /contexts 
+
+- I think something super cool to do would be to use context to provide different themes 
+- NOT an mvp goal currently
+- may periodically launch tickets for contexts if new use cases arise 
+
+### /dict 
+
+- Any type declaration that will be used in more than 2 files, or more than 1 dir, please put the type into the /dict dir 
+for common usage around the package.
+
+### /docs 
+
+- home to the internal storybook docs you're reading right now 😏 
+- if you want to see live time edits, run `npm run storybook` and edit /src/docs/env-setup.stories.mdx 
+
+## Man i forgot how much I hated reading
+## TLDR, getting SB up 
+
+after installing dependencies,
+run `npm run storybook` to start the storybook GUI,
+from here, you'll have access to all of the lib's documentation and components.
+In the GUI you can interact with the visual states to test components with variable props 
+to see how they hold up to edge cases. CTRL C in the terminal will end the running UI session. 
+
+
+
+
+    

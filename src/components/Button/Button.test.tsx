@@ -3,6 +3,8 @@ import { render, fireEvent, screen } from '@testing-library/react';
 import { Button } from './Button';
 import colors from '../../colors';
 
+const textColor = '#F3F4F6';
+
 describe('Button', () => {
   test('renders a default button with text', async () => {
     render(<Button>Click me</Button>);
@@ -10,14 +12,14 @@ describe('Button', () => {
     expect(screen.getByText('Click me')).toBeInTheDocument();
     expect(screen.getByText('Click me')).toHaveStyle({
       backgroundColor: colors.nately.lavenderGray,
-      color: '#F3F4F6',
+      color: textColor,
     });
   });
   test('renders a primary button', async () => {
     render(<Button primary>Click me</Button>);
 
     expect(screen.getByText('Click me')).toHaveStyle({
-      backgroundColor: '#2563EB',
+      backgroundColor: colors.nately.amethyst,
       color: '#F3F4F6',
     });
   });

@@ -6,6 +6,7 @@ module.exports = {
   extends: [
     'plugin:react/recommended',
     'airbnb',
+    'jest',
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {

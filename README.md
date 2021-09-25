@@ -1,6 +1,6 @@
 # Heller UI
 
-![Lil Jon Yeah](/assets/yeah.jpeg)
+![Orr](/assets/orr.jpeg)
 
 ## Installation
 
