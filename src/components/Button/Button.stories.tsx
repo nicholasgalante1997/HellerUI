@@ -2,17 +2,17 @@ import * as React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
 import { Button, ButtonProps } from './Button';
 
-/* 
-* As a general rule of thumb, 
-* the default export in a *.stories.tsx file
-* is used to add meta information concerning the component,
-* like props and descriptions for our stories
-*/
+/*
+ * As a general rule of thumb,
+ * the default export in a *.stories.tsx file
+ * is used to add meta information concerning the component,
+ * like props and descriptions for our stories
+ */
 
 export default {
   title: 'Button',
   component: Button,
-  description: `A button that needs way better styling.`,
+  description: 'A button that needs way better styling.',
   argTypes: {
     backgroundColor: { control: 'color' },
     color: { control: 'color' },
@@ -20,10 +20,10 @@ export default {
   },
 } as Meta;
 
-//👇 We create a “template” of how args map to rendering
+// 👇 We create a “template” of how args map to rendering
 const Template: Story<ButtonProps> = (args) => <Button {...args}>Click me</Button>;
 
-//👇 Each story then reuses that template
+// 👇 Each story then reuses that template
 export const Default = Template.bind({});
 Default.args = {};
 

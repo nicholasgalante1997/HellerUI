@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { render, fireEvent, screen } from '@testing-library/react';
 import { Button } from './Button';
+import colors from '../../colors';
 
 describe('Button', () => {
   test('renders a default button with text', async () => {
@@ -8,8 +9,8 @@ describe('Button', () => {
 
     expect(screen.getByText('Click me')).toBeInTheDocument();
     expect(screen.getByText('Click me')).toHaveStyle({
-      backgroundColor: '#D1D5DB',
-      color: '#1F2937',
+      backgroundColor: colors.nately.lavenderGray,
+      color: '#F3F4F6',
     });
   });
   test('renders a primary button', async () => {
