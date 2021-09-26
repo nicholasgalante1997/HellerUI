@@ -2,7 +2,7 @@ import React from 'react';
 import CSS from 'csstype';
 import colors from '../../colors';
 
-export enum ButtonSizeEnum {
+export enum ButtonSize {
   xs = 'extra-small',
   sm = 'small',
   rg = 'regular',
@@ -22,7 +22,7 @@ export interface ButtonProps {
   style?: CSS.Properties;
   backgroundColor?: string;
   color?: string;
-  size?: ButtonSizeEnum,
+  size?: ButtonSize,
   variant?: ButtonVariants | null | undefined 
 }
 
@@ -37,13 +37,18 @@ export const Button: React.FC<ButtonProps> = ({
   onClick,
   backgroundColor = colors.nately.lavenderGray,
   color = '#F3F4F6',
-  size = ButtonSizeEnum.rg,
+  size = ButtonSize.rg,
   style = {},
   variant = null,
 }) => {
-  // Transferrence variable
+  /** 
+   * Dynamic style attributes
+  */ 
   let background = backgroundColor;
-  const variantHandler = (variant: string | null) => {
+  let padding = '10px 20px';
+  let fontSize = '1rem';
+  
+  const variantHandler = (variant: ButtonVariants | string | null) => {
     if (!variant) return;
     switch(variant){
       case 'twilight':
@@ -53,7 +58,33 @@ export const Button: React.FC<ButtonProps> = ({
         return null;
     }
   };
+
+  const sizeHandler = (size: ButtonSize | string ) => {
+    if (size === ButtonSize.rg) return;
+    switch(size){
+      case ButtonSize.xs:
+        padding = '4px 8px';
+        fontSize = '0.5rem';
+        return;
+      case ButtonSize.sm:
+        padding = '8px 16px';
+        fontSize = '0.75rem';
+        return;
+      case ButtonSize.lg:
+        padding = '16px 32px';
+        fontSize = '2rem';
+        return;
+      case ButtonSize.xl:
+        padding = '24px 48px';
+        fontSize = '2.25rem';
+        return;
+      default:
+        return;
+    }
+  };
+
   variantHandler(variant);
+  sizeHandler(size);
 
   const buttonStyles: CSS.Properties = {
     /**
@@ -65,13 +96,15 @@ export const Button: React.FC<ButtonProps> = ({
     display: 'block',
     lineHeight: 1,
     fontFamily: 'Gill Sans, sans-serif',
-    background: background,
-    color: color,
-    padding: '10px 20px',
 
     /**
-     * Background Color 
+     * Dynamic Style Attributes;
      */
+    background: background,
+    color: color,
+    padding: padding,
+    fontSize: fontSize,
+
   };
 
   return (

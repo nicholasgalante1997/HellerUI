@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import * as React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
-import { Button, ButtonProps, ButtonSizeEnum, ButtonVariants } from './Button';
+import { Button, ButtonProps, ButtonSize, ButtonVariants } from './Button';
 import colors from '../../colors';
 
 /*
@@ -33,16 +33,21 @@ Default.args = {};
 
 export const Sizes = (args: any) => (
   <div>
-    <Button size={ButtonSizeEnum.xs} {...args}>Click Me</Button>
-    <Button size={ButtonSizeEnum.sm} {...args}>Click Me</Button>
-    <Button size={ButtonSizeEnum.rg} {...args}>Click Me</Button>
-    <Button size={ButtonSizeEnum.lg} {...args}>Click Me</Button>
-    <Button size={ButtonSizeEnum.xl} {...args}>Click Me</Button>
-    <Button size={ButtonSizeEnum.bb} {...args}>Click Me</Button>
+    <Button size={ButtonSize.xs} {...args}>Click Me</Button>
+    <Button size={ButtonSize.sm} {...args}>Click Me</Button>
+    <Button size={ButtonSize.rg} {...args}>Click Me</Button>
+    <Button size={ButtonSize.lg} {...args}>Click Me</Button>
+    <Button size={ButtonSize.xl} {...args}>Click Me</Button>
+    <Button size={ButtonSize.bb} {...args}>Click Me</Button>
   </div>
 );
 Sizes.args = {
   backgroundColor: '#A78BFA'
+};
+Sizes.parameters = {
+  docs: {
+    storyDescription: "There are 6 accepted sizes, ranging from xs - bb respectively. The default size setting is medium or (rg). It is recommended that if you are going to customize the size, you import ButtonSize alongside Button to preserve padding `XS (ButtonSize.xs), Sm (ButtonSize.sm), Med (ButtonSize.rg), Lg (ButtonSize.lg), XL (ButtonSize.xl) Biggest (ButtonSize.bb)`",
+  }
 };
 
 export const Variants = (args: any) => (
