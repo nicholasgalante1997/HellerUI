@@ -20,7 +20,6 @@ export default {
   argTypes: {
     backgroundColor: { control: 'color' },
     color: { control: 'color' },
-    primary: { control: 'boolean' },
   },
 } as Meta;
 
@@ -33,12 +32,24 @@ Default.args = {};
 
 export const Sizes = (args: any) => (
   <div>
-    <Button size={ButtonSize.xs} {...args}>Click Me</Button>
-    <Button size={ButtonSize.sm} {...args}>Click Me</Button>
-    <Button size={ButtonSize.rg} {...args}>Click Me</Button>
-    <Button size={ButtonSize.lg} {...args}>Click Me</Button>
-    <Button size={ButtonSize.xl} {...args}>Click Me</Button>
-    <Button size={ButtonSize.bb} {...args}>Click Me</Button>
+    <div style={{padding: 4}}>
+      <Button size={ButtonSize.xs} {...args}>Click Me</Button>
+    </div>
+    <div style={{padding: 4}}>
+      <Button size={ButtonSize.sm} {...args}>Click Me</Button>
+    </div>
+    <div style={{padding: 4}}>
+      <Button size={ButtonSize.rg} {...args}>Click Me</Button>
+    </div>
+    <div style={{padding: 4}}>
+      <Button size={ButtonSize.lg} {...args}>Click Me</Button>
+    </div>
+    <div style={{padding: 4}}>
+      <Button size={ButtonSize.xl} {...args}>Click Me</Button>
+    </div>
+    <div style={{padding: 4}}>
+      <Button size={ButtonSize.bb} {...args}>Click Me</Button>
+    </div>
   </div>
 );
 Sizes.args = {
@@ -58,8 +69,49 @@ export const Variants = (args: any) => (
       </p>
       <Button variant={ButtonVariants.twilight}>Click me</Button>
     </div>
+    <div>
+      <p style={{ color: colors.nately.amethyst, fontFamily: 'Gill Sans, sans-serif'}}>
+        Twilight Gradient Variant
+      </p>
+      <Button variant={ButtonVariants.twilightGradient}>Click me</Button>
+    </div>
+    <div>
+      <p style={{ color: colors.dunbar.amaranthPurple, fontFamily: 'Gill Sans, sans-serif'}}>
+        Rose Garden Variant
+      </p>
+      <Button variant={ButtonVariants.roseGarden}>Click me</Button>
+    </div>
+    <div>
+      <p style={{ color: colors.dunbar.amaranthPurple, fontFamily: 'Gill Sans, sans-serif'}}>
+        Rose Garden Gradient Variant
+      </p>
+      <Button variant={ButtonVariants.roseGardenGradient}>Click me</Button>
+    </div>
+    <div>
+      <p style={{ color: colors.dunbar.flourescentBlue, fontFamily: 'Gill Sans, sans-serif'}}>
+        Skyline Variant
+      </p>
+      <Button variant={ButtonVariants.skyline}>Click me</Button>
+    </div>
+    <div>
+      <p style={{ color: colors.dunbar.flourescentBlue, fontFamily: 'Gill Sans, sans-serif'}}>
+        Skyline Variant
+      </p>
+      <Button variant={ButtonVariants.skylineGradient}>Click me</Button>
+    </div>
   </div>
 );
+Variants.parameters = {
+  docs: {
+    storyDescription: 'The below variants will work out of the box with the HellerUI component library components. Note, that while most variants will work with the invert prop, variants that are gradients will by default prevent color inversion.'
+  }
+};
+
+export const Invert = Template.bind({});
+Invert.args = {
+  invert: true,
+  variant: ButtonVariants.roseGarden
+}
 
 export const CustomBackground = Template.bind({});
 CustomBackground.args = {

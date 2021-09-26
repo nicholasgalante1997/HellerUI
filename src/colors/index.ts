@@ -23,4 +23,17 @@ export default {
     greenSheen: '#60AB9A',
     gainsboro: '#DEDEE0',
   },
+  cathcart: {
+    romanSilver: '#84828F',
+    oldLavender: '#6A687A',
+    blackCoral: '#536271',
+    charcoal: '#3E4C5E',
+    prussianBlue: '#2C3D55'
+  },
+  dunbar: {
+    lightPink: '#FBB7C0',
+    amaranthPurple: '#B6244F',
+    flourescentBlue: '#34F6F2',
+    lightCyan: '#D1F5FF',
+  }
 };
