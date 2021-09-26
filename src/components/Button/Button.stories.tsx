@@ -1,7 +1,8 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import * as React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
-import { Button, ButtonProps } from './Button';
+import { Button, ButtonProps, ButtonSizeEnum, ButtonVariants } from './Button';
+import colors from '../../colors';
 
 /*
  * As a general rule of thumb,
@@ -13,7 +14,9 @@ import { Button, ButtonProps } from './Button';
 export default {
   title: 'Button',
   component: Button,
-  description: 'A button that needs way better styling.',
+  parameters: {
+    componentSubtitle: 'A general purpose button, see below for available props for this token.'
+  },
   argTypes: {
     backgroundColor: { control: 'color' },
     color: { control: 'color' },
@@ -28,10 +31,30 @@ const Template: Story<ButtonProps> = (args) => <Button {...args}>Click me</Butto
 export const Default = Template.bind({});
 Default.args = {};
 
-export const Primary = Template.bind({});
-Primary.args = {
-  primary: true,
+export const Sizes = (args: any) => (
+  <div>
+    <Button size={ButtonSizeEnum.xs} {...args}>Click Me</Button>
+    <Button size={ButtonSizeEnum.sm} {...args}>Click Me</Button>
+    <Button size={ButtonSizeEnum.rg} {...args}>Click Me</Button>
+    <Button size={ButtonSizeEnum.lg} {...args}>Click Me</Button>
+    <Button size={ButtonSizeEnum.xl} {...args}>Click Me</Button>
+    <Button size={ButtonSizeEnum.bb} {...args}>Click Me</Button>
+  </div>
+);
+Sizes.args = {
+  backgroundColor: '#A78BFA'
 };
+
+export const Variants = (args: any) => (
+  <div>
+    <div>
+      <p style={{ color: colors.nately.amethyst, fontFamily: 'Gill Sans, sans-serif'}}>
+        Twilight Variant
+      </p>
+      <Button variant={ButtonVariants.twilight}>Click me</Button>
+    </div>
+  </div>
+);
 
 export const CustomBackground = Template.bind({});
 CustomBackground.args = {

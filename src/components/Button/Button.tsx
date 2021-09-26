@@ -2,7 +2,7 @@ import React from 'react';
 import CSS from 'csstype';
 import colors from '../../colors';
 
-enum ButtonSizeEnum {
+export enum ButtonSizeEnum {
   xs = 'extra-small',
   sm = 'small',
   rg = 'regular',
@@ -10,23 +10,50 @@ enum ButtonSizeEnum {
   xl = 'extra-large',
   bb = 'biggest-boy'
 };
+
+export enum ButtonVariants {
+  twilight = 'twilight',
+
+};
+
 export interface ButtonProps {
   children: React.ReactNode;
-  primary?: boolean;
   onClick?: () => void;
+  style?: CSS.Properties;
   backgroundColor?: string;
   color?: string;
-  size?: ButtonSizeEnum
+  size?: ButtonSizeEnum,
+  variant?: ButtonVariants | null | undefined 
 }
 
+/**
+ * 
+ * - You must pass in children to the Button component, as the internal text you're intending to display
+ * - Works best with raw text but any text element as a child will work
+ * - "Some men are born mediocre, some men achieve mediocrity, and some men have mediocrity thrust upon them."
+ */
 export const Button: React.FC<ButtonProps> = ({
   children,
-  primary = false,
   onClick,
   backgroundColor = colors.nately.lavenderGray,
   color = '#F3F4F6',
-  size = ButtonSizeEnum.rg
+  size = ButtonSizeEnum.rg,
+  style = {},
+  variant = null,
 }) => {
+  // Transferrence variable
+  let background = backgroundColor;
+  const variantHandler = (variant: string | null) => {
+    if (!variant) return;
+    switch(variant){
+      case 'twilight':
+        background = `linear-gradient(to right, ${colors.nately.darkPurple}, ${colors.nately.middleBluePurple})`;
+        break;
+      default:
+        return null;
+    }
+  };
+  variantHandler(variant);
 
   const buttonStyles: CSS.Properties = {
     /**
@@ -35,11 +62,11 @@ export const Button: React.FC<ButtonProps> = ({
     borderRadius: '4px',
     border: 0,
     cursor: 'pointer',
-    display: 'inline-block',
+    display: 'block',
     lineHeight: 1,
     fontFamily: 'Gill Sans, sans-serif',
-    backgroundColor: primary ? colors.nately.amethyst : backgroundColor,
-    color: primary ? '#F3F4F6' : color,
+    background: background,
+    color: color,
     padding: '10px 20px',
 
     /**
@@ -48,7 +75,7 @@ export const Button: React.FC<ButtonProps> = ({
   };
 
   return (
-    <button type="button" onClick={onClick} style={buttonStyles}>
+    <button type="button" onClick={onClick} style={{...buttonStyles, ...style}}>
       {children}
     </button>
   );
