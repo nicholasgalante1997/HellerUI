@@ -14,7 +14,8 @@
     "build-storybook": "build-storybook",
     "build": "rollup -c",
     "ch-update": "npx changeset",
-    "release": "npm run build && npx changeset publish"
+    "release": "npm run build && npx changeset publish",
+    "chromatic": "npx chromatic --project-token=9590c4673854"
   },
   "author": "Nick Galante",
   "license": "ISC",

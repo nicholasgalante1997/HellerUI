@@ -2,3 +2,5 @@ node_modules
 lib
 .eslintcache
 storybook-static
+.env*
+*.log
