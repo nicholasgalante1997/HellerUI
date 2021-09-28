@@ -38,6 +38,7 @@
     "@typescript-eslint/parser": "^4.31.2",
     "babel-loader": "^8.2.2",
     "babel-preset-react-app": "^10.0.0",
+    "chromatic": "^5.10.1",
     "css-loader": "^5.2.6",
     "csstype": "^3.0.9",
     "eslint": "^7.32.0",
