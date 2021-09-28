@@ -1,5 +1,11 @@
 # @nicholasgalante1997/hellerui
 
+## 1.0.8
+
+### Patch Changes
+
+- b7c883b: adjusted bundle
+
 ## 1.0.7
 
 ### Patch Changes
