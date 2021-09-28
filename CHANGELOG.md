@@ -1,5 +1,11 @@
 # @nicholasgalante1997/hellerui
 
+## 1.0.7
+
+### Patch Changes
+
+- c0fdb03: readme patches, chromatic integration
+
 ## 1.0.6
 
 ### Patch Changes
