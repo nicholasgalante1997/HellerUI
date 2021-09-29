@@ -3,6 +3,7 @@ import * as React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
 import { Button, ButtonProps, ButtonSize, ButtonVariants } from './Button';
 import colors from '../../colors';
+import { ShadowStyles } from '../../globals/styles';
 
 /*
  * As a general rule of thumb,
@@ -112,6 +113,11 @@ Invert.args = {
   invert: true,
   variant: ButtonVariants.roseGarden
 }
+
+export const Shadow = Template.bind({});
+Shadow.args = {
+  shadow: ShadowStyles.sharp,
+};
 
 export const CustomBackground = Template.bind({});
 CustomBackground.args = {

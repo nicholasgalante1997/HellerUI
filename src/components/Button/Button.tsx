@@ -1,6 +1,7 @@
 import React from 'react';
 import CSS from 'csstype';
 import colors from '../../colors';
+import { ShadowStyles, baseShadowHex } from '../../globals/styles';
 
 export enum ButtonSize {
   xs = 'extra-small',
@@ -9,7 +10,7 @@ export enum ButtonSize {
   lg = 'large',
   xl = 'extra-large',
   bb = 'biggest-boy'
-};
+}
 
 export enum ButtonVariants {
   twilight = 'twilight',
@@ -17,8 +18,8 @@ export enum ButtonVariants {
   roseGarden = 'rose-garden',
   roseGardenGradient = 'rose-garden-gradient',
   skyline = 'skyline',
-  skylineGradient = 'skyline-gradient',
-};
+  skylineGradient = 'skyline-gradient'
+}
 
 export interface ButtonProps {
   children: React.ReactNode;
@@ -26,13 +27,16 @@ export interface ButtonProps {
   style?: CSS.Properties;
   backgroundColor?: string;
   color?: string;
-  size?: ButtonSize,
-  variant?: ButtonVariants | null | undefined,
-  invert?: boolean; 
+  size?: ButtonSize;
+  shadow?: ShadowStyles | null | undefined; 
+  shadowColor?: string | null | undefined;
+  variant?: ButtonVariants | null | undefined;
+  invert?: boolean;
+  className?: string;
 }
 
 /**
- * 
+ *
  * - You must pass in children to the Button component, as the internal text you're intending to display
  * - Works best with raw text but any text element as a child will work
  * - "Some men are born mediocre, some men achieve mediocrity, and some men have mediocrity thrust upon them."
@@ -42,25 +46,29 @@ export const Button: React.FC<ButtonProps> = ({
   onClick,
   backgroundColor = colors.nately.lavenderGray,
   color = '#F3F4F6',
+  shadowColor = baseShadowHex,
   size = ButtonSize.rg,
+  shadow = null,
   style = {},
   variant = null,
   invert = false,
+  className = null,
 }) => {
-  /** 
+  /**
    * Dynamic style attributes
-  */ 
+   */
   let background = backgroundColor;
   let padding = '10px 20px';
   let fontSize = '1rem';
   let border = null;
-  
+  let boxShadow: string | null = null;
+
   const variantHandler = (variant: ButtonVariants | string | null) => {
     if (!variant) return;
-    switch(variant){
+    switch (variant) {
       case 'twilight':
-        background = colors.nately.darkPurple;
-        color = colors.nately.middleBluePurple;
+        background = colors.nately.middleBluePurple;
+        color = colors.nately.darkPurple;
         break;
       case 'twilight-gradient':
         background = `linear-gradient(to right, ${colors.nately.darkPurple}, ${colors.nately.middleBluePurple})`;
@@ -87,9 +95,9 @@ export const Button: React.FC<ButtonProps> = ({
     }
   };
 
-  const sizeHandler = (size: ButtonSize | string ) => {
+  const sizeHandler = (size: ButtonSize | string) => {
     if (size === ButtonSize.rg) return;
-    switch(size){
+    switch (size) {
       case ButtonSize.xs:
         padding = '4px 8px';
         fontSize = '0.5rem';
@@ -115,12 +123,22 @@ export const Button: React.FC<ButtonProps> = ({
     }
   };
 
+  const shadowHandler = (shdaow: ShadowStyles | null) => {
+    if (!shadow) return;
+    switch(shadow){
+      case ShadowStyles.sharp:
+        boxShadow = `4px 4px ${shadowColor}`;
+        return;
+      default:
+        return;
+    }
+  };
+
   variantHandler(variant);
   sizeHandler(size);
+  shadowHandler(shadow);
 
-  const validateNonGradient: () => boolean = () => {
-    return variant?.split('-')[-1] !== 'gradient';
-  }
+  const validateNonGradient: () => boolean = () => variant?.split('-')[-1] !== 'gradient';
 
   /**
    * The last thing checked always is `invert`
@@ -132,7 +150,7 @@ export const Button: React.FC<ButtonProps> = ({
     border = `1px solid ${background}`;
     color = background;
     background = '#fff';
-  };
+  }
 
   const buttonStyles: CSS.Properties = {
     /**
@@ -148,14 +166,20 @@ export const Button: React.FC<ButtonProps> = ({
     /**
      * Dynamic Style Attributes;
      */
-    background: background,
-    color: color,
-    padding: padding,
-    fontSize: fontSize,
+    background,
+    color,
+    padding,
+    fontSize,
+    boxShadow: boxShadow ?? 'none'
   };
 
   return (
-    <button type="button" onClick={onClick} style={{...buttonStyles, ...style}}>
+    <button
+      className={className ?? 'hellerui-default-button'}
+      type="button"
+      onClick={onClick}
+      style={{ ...buttonStyles, ...style }}
+    >
       {children}
     </button>
   );
