@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-shadow */
 import React from 'react';
 import CSS from 'csstype';
 import colors from '../../colors';
@@ -28,7 +30,7 @@ export interface ButtonProps {
   backgroundColor?: string;
   color?: string;
   size?: ButtonSize;
-  shadow?: ShadowStyles | null | undefined; 
+  shadow?: ShadowStyles | null | undefined;
   shadowColor?: string | null | undefined;
   variant?: ButtonVariants | null | undefined;
   invert?: boolean;
@@ -36,10 +38,8 @@ export interface ButtonProps {
 }
 
 /**
- *
- * - You must pass in children to the Button component, as the internal text you're intending to display
+ * - You must pass in children to the Button component, as the text you're intending to display
  * - Works best with raw text but any text element as a child will work
- * - "Some men are born mediocre, some men achieve mediocrity, and some men have mediocrity thrust upon them."
  */
 export const Button: React.FC<ButtonProps> = ({
   children,
@@ -55,105 +55,106 @@ export const Button: React.FC<ButtonProps> = ({
   className = null,
 }) => {
   /**
+   * ANCHOR:
    * Dynamic style attributes
    */
   let background = backgroundColor;
+  let fontColor = color;
   let padding = '10px 20px';
   let fontSize = '1rem';
   let border = null;
   let boxShadow: string | null = null;
 
-  const variantHandler = (variant: ButtonVariants | string | null) => {
+  const variantHandler = () => {
     if (!variant) return;
     switch (variant) {
       case 'twilight':
         background = colors.nately.middleBluePurple;
-        color = colors.nately.darkPurple;
+        fontColor = colors.nately.darkPurple;
         break;
       case 'twilight-gradient':
         background = `linear-gradient(to right, ${colors.nately.darkPurple}, ${colors.nately.middleBluePurple})`;
-        color = '#fff';
+        fontColor = '#fff';
         break;
       case 'rose-garden':
         background = colors.dunbar.amaranthPurple;
-        color = colors.dunbar.lightPink;
-        return;
+        fontColor = colors.dunbar.lightPink;
+        break;
       case 'rose-garden-gradient':
         background = `linear-gradient(to right, ${colors.dunbar.amaranthPurple}, ${colors.dunbar.lightPink})`;
-        color = '#fff';
-        return;
+        fontColor = '#fff';
+        break;
       case 'skyline':
         background = colors.dunbar.flourescentBlue;
-        color = colors.dunbar.lightCyan;
-        return;
+        fontColor = colors.dunbar.lightCyan;
+        break;
       case 'skyline-gradient':
         background = `linear-gradient(to right, ${colors.dunbar.flourescentBlue}, ${colors.dunbar.lightCyan})`;
-        color = '#fff';
-        return;
+        fontColor = '#fff';
+        break;
       default:
-        return;
     }
   };
 
-  const sizeHandler = (size: ButtonSize | string) => {
+  const sizeHandler = () => {
     if (size === ButtonSize.rg) return;
     switch (size) {
       case ButtonSize.xs:
         padding = '4px 8px';
         fontSize = '0.5rem';
-        return;
+        break;
       case ButtonSize.sm:
         padding = '8px 16px';
         fontSize = '0.75rem';
-        return;
+        break;
       case ButtonSize.lg:
         padding = '16px 32px';
         fontSize = '1.75rem';
-        return;
+        break;
       case ButtonSize.xl:
         padding = '24px 48px';
         fontSize = '2.25rem';
-        return;
+        break;
       case ButtonSize.bb:
         padding = '32px 64px';
         fontSize = '2.75rem';
-        return;
+        break;
       default:
-        return;
+        break;
     }
   };
 
-  const shadowHandler = (shdaow: ShadowStyles | null) => {
+  const shadowHandler = () => {
     if (!shadow) return;
-    switch(shadow){
+    switch (shadow) {
       case ShadowStyles.sharp:
         boxShadow = `4px 4px ${shadowColor}`;
-        return;
+        break;
       default:
-        return;
+        break;
     }
   };
 
-  variantHandler(variant);
-  sizeHandler(size);
-  shadowHandler(shadow);
-
-  const validateNonGradient: () => boolean = () => variant?.split('-')[-1] !== 'gradient';
+  variantHandler();
+  sizeHandler();
+  shadowHandler();
 
   /**
+   * ANCHOR:
    * The last thing checked always is `invert`
    * if `true` && variant isn't of a gradient type,
    * we flip background and border values;
    */
-
+  const validateNonGradient: () => boolean = () => variant?.split('-')[-1] !== 'gradient';
   if (invert && validateNonGradient()) {
     border = `1px solid ${background}`;
-    color = background;
+    fontColor = background;
     background = '#fff';
   }
 
   const buttonStyles: CSS.Properties = {
     /**
+     * ANCHOR:
      * General Styles for all buttons
      */
     borderRadius: size !== ButtonSize.bb ? '4px' : '8px',
@@ -164,13 +165,14 @@ export const Button: React.FC<ButtonProps> = ({
     fontFamily: 'Gill Sans, sans-serif',
 
     /**
+     * ANCHOR:
      * Dynamic Style Attributes;
      */
     background,
-    color,
+    color: fontColor,
     padding,
     fontSize,
-    boxShadow: boxShadow ?? 'none'
+    boxShadow: boxShadow ?? 'none',
   };
 
   return (
