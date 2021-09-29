@@ -36,4 +36,6 @@ export const Sizes = (args: any) => (
     </div>
   </div>
 );
-Sizes.args = {};
+Sizes.args = {
+  backgroundColor: colors.mcwatt.flickrPink,
+};

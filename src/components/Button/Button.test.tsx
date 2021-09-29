@@ -1,3 +1,5 @@
+/* eslint-disable import/no-extraneous-dependencies */
+/* eslint-disable no-undef */
 import * as React from 'react';
 import { render, fireEvent, screen } from '@testing-library/react';
 import { Button, ButtonVariants } from './Button';
@@ -7,7 +9,7 @@ const textColor = '#F3F4F6';
 
 describe('Button', () => {
   /**
-   * Default render
+   * Default render tests
    */
   test('renders a default button with text', async () => {
     render(<Button>Click me</Button>);
@@ -16,34 +18,36 @@ describe('Button', () => {
     expect(screen.getByText('Click me')).toHaveStyle({
       backgroundColor: colors.nately.lavenderGray,
       color: textColor,
+      padding: '10px 20px',
+      fontSize: '1rem',
     });
   });
 
   /**
-   * Twilight variant render
+   * Twilight variant render tests
    */
-  test('renders a button with the twilight color variant', async () => {
-    render(<Button variant={ButtonVariants.twilight}>Click me</Button>);
+  test('renders a button with the twilight gradient variant', async () => {
+    render(<Button variant={ButtonVariants.twilightGradient}>Click me</Button>);
 
     expect(screen.getByText('Click me')).toHaveStyle({
       backgroundColor: `linear-gradient(to right, ${colors.nately.darkPurple}, ${colors.nately.middleBluePurple})`,
-      color: '#F3F4F6',
+      color: '#fff',
     });
   });
 
   /**
-   * Rose Garden variant render
+   * Rose Garden variant render tests
    */
-   test('renders a button with the rose garden color variant', async () => {
-    render(<Button variant={ButtonVariants.roseGarden}>Click me</Button>);
+  test('renders a button with the rose garden color variant', async () => {
+    render(<Button variant={ButtonVariants.roseGardenGradient}>Click me</Button>);
 
     expect(screen.getByText('Click me')).toHaveStyle({
       backgroundColor: `linear-gradient(to right, ${colors.dunbar.amaranthPurple}, ${colors.dunbar.lightPink})`,
-      color: '#F3F4F6',
+      color: '#fff',
     });
   });
   /**
-   * Custom Colors render
+   * Custom Colors render tests
    */
   test('renders a button with custom colors', async () => {
     render(
@@ -59,7 +63,7 @@ describe('Button', () => {
   });
 
   /**
-   * Mock Function call
+   * Mock Function call tests
    */
   test('handles onClick', async () => {
     const mockOnClick = jest.fn();

@@ -1,16 +1,10 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-shadow */
 import React from 'react';
 import CSS from 'csstype';
 import colors from '../../colors';
-
-export interface BadgeProps {
-  children: React.ReactNode;
-  color?: string;
-  size?: BadgeSize;
-  backgroundColor?: string;
-  style?: CSS.Properties;
-  onClick?: () => void;
-  className?: string;
-}
 
 export enum BadgeSize {
   xs = 'extra-small',
@@ -19,6 +13,15 @@ export enum BadgeSize {
   lg = 'large',
   xl = 'extra-large',
   bb = 'biggest-boy'
+}
+export interface BadgeProps {
+  children: React.ReactNode;
+  color?: string;
+  size?: BadgeSize;
+  backgroundColor?: string;
+  style?: CSS.Properties;
+  onClick?: () => void;
+  className?: string;
 }
 
 export const Badge: React.FC<BadgeProps> = ({
@@ -30,30 +33,28 @@ export const Badge: React.FC<BadgeProps> = ({
   onClick = () => {},
   className = 'heller-ui-badge-default',
 }) => {
-
   let padding: string = '4px 8px';
   let fontSize: string = '0.75rem';
   let borderRadius: string = '16px';
 
-  const sizeHandler = (size: BadgeSize) => {
+  const sizeHandler = () => {
     if (size === BadgeSize.sm) return;
     switch (size) {
       case BadgeSize.xs:
         padding = '2px 4px';
         fontSize = '0.5rem';
-        return;
+        break;
       case BadgeSize.rg:
         padding = '6px 12px';
         fontSize = '1rem';
         borderRadius = '24px';
-        return;
-    
+        break;
       default:
-        return;
+        break;
     }
   };
 
-  sizeHandler(size);
+  sizeHandler();
 
   const badgeStyles: CSS.Properties = {
     color,
