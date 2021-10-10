@@ -2,10 +2,10 @@
 import * as React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
 import {
-  Button, ButtonProps, ButtonSize, ButtonVariants,
+  Button, ButtonProps,
 } from './Button';
 import colors from '../../colors';
-import { ShadowStyles } from '../../globals/styles';
+import { ShadowStyles, HellerSize, HellerVariant } from '../../globals/styles';
 
 /*
  * NOTE:
@@ -40,32 +40,32 @@ Default.args = {};
 export const Sizes = (args: any) => (
   <div>
     <div style={{ padding: 4 }}>
-      <Button size={ButtonSize.xs} {...args}>
+      <Button size={HellerSize.xs} {...args}>
         Click Me
       </Button>
     </div>
     <div style={{ padding: 4 }}>
-      <Button size={ButtonSize.sm} {...args}>
+      <Button size={HellerSize.sm} {...args}>
         Click Me
       </Button>
     </div>
     <div style={{ padding: 4 }}>
-      <Button size={ButtonSize.rg} {...args}>
+      <Button size={HellerSize.rg} {...args}>
         Click Me
       </Button>
     </div>
     <div style={{ padding: 4 }}>
-      <Button size={ButtonSize.lg} {...args}>
+      <Button size={HellerSize.lg} {...args}>
         Click Me
       </Button>
     </div>
     <div style={{ padding: 4 }}>
-      <Button size={ButtonSize.xl} {...args}>
+      <Button size={HellerSize.xl} {...args}>
         Click Me
       </Button>
     </div>
     <div style={{ padding: 4 }}>
-      <Button size={ButtonSize.bb} {...args}>
+      <Button size={HellerSize.bb} {...args}>
         Click Me
       </Button>
     </div>
@@ -92,7 +92,7 @@ export const Variants = (args: any) => (
       >
         Twilight Variant
       </p>
-      <Button {...args} variant={ButtonVariants.twilight}>Click me</Button>
+      <Button {...args} variant={HellerVariant.twilight}>Click me</Button>
     </div>
     <div>
       <p
@@ -103,7 +103,7 @@ export const Variants = (args: any) => (
       >
         Twilight Gradient Variant
       </p>
-      <Button {...args} variant={ButtonVariants.twilightGradient}>Click me</Button>
+      <Button {...args} variant={HellerVariant.twilightGradient}>Click me</Button>
     </div>
     <div>
       <p
@@ -114,7 +114,7 @@ export const Variants = (args: any) => (
       >
         Rose Garden Variant
       </p>
-      <Button {...args} variant={ButtonVariants.roseGarden}>Click me</Button>
+      <Button {...args} variant={HellerVariant.roseGarden}>Click me</Button>
     </div>
     <div>
       <p
@@ -125,29 +125,7 @@ export const Variants = (args: any) => (
       >
         Rose Garden Gradient Variant
       </p>
-      <Button {...args} variant={ButtonVariants.roseGardenGradient}>Click me</Button>
-    </div>
-    <div>
-      <p
-        style={{
-          color: colors.dunbar.flourescentBlue,
-          fontFamily: 'Gill Sans, sans-serif',
-        }}
-      >
-        Skyline Variant
-      </p>
-      <Button {...args} variant={ButtonVariants.skyline}>Click me</Button>
-    </div>
-    <div>
-      <p
-        style={{
-          color: colors.dunbar.flourescentBlue,
-          fontFamily: 'Gill Sans, sans-serif',
-        }}
-      >
-        Skyline Variant
-      </p>
-      <Button {...args} ariant={ButtonVariants.skylineGradient}>Click me</Button>
+      <Button {...args} variant={HellerVariant.roseGardenGradient}>Click me</Button>
     </div>
   </div>
 );
@@ -161,11 +139,12 @@ Variants.parameters = {
 export const Invert = Template.bind({});
 Invert.args = {
   invert: true,
-  variant: ButtonVariants.roseGarden,
+  variant: HellerVariant.roseGarden,
 };
 
 export const Shadow = Template.bind({});
 Shadow.args = {
+  variant: HellerVariant.roseGarden,
   shadow: ShadowStyles.sharp,
 };
 
@@ -176,7 +155,7 @@ CustomBackground.args = {
 
 export const CustomFontColor = Template.bind({});
 CustomFontColor.args = {
-  color: '#1E40AF',
+  color: 'gold',
 };
 
 export const OnClick = Template.bind({});

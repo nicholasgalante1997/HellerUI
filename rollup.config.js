@@ -4,7 +4,7 @@ import cleaner from 'rollup-plugin-cleaner';
 import commonjs from '@rollup/plugin-commonjs';
 import resolve from '@rollup/plugin-node-resolve';
 import postcss from 'rollup-plugin-postcss';
-import copy from "rollup-plugin-copy-assets";
+import copy from 'rollup-plugin-copy-assets';
 import packageJson from './package.json';
 
 export default {
@@ -29,7 +29,7 @@ export default {
     copy({
       assets: [
         // You can include directories with the `copy` plugin
-        "assets",
+        'assets',
       ],
     }),
     resolve(),
