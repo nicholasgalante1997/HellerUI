@@ -1,3 +1,3 @@
-export { Button, ButtonSize, ButtonVariants } from './components/Button';
-export { Badge, BadgeSize } from './components/Badge';
+export { Button } from './components/Button';
+export { Badge } from './components/Badge';
 export * as HellerStylesProfiles from './globals/styles';
