@@ -1,6 +1,6 @@
 # Heller UI
 
-![Orr](/assets/orr.jpeg)
+![Orr](/src/assets/orr.jpeg)
 
 ## Installation
 
