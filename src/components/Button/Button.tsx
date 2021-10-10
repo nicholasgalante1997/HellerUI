@@ -1,27 +1,10 @@
 /* eslint-disable no-unused-vars */
-/* eslint-disable no-shadow */
 import React from 'react';
 import CSS from 'csstype';
 import colors from '../../colors';
-import { ShadowStyles, baseShadowHex } from '../../globals/styles';
-
-export enum ButtonSize {
-  xs = 'extra-small',
-  sm = 'small',
-  rg = 'regular',
-  lg = 'large',
-  xl = 'extra-large',
-  bb = 'biggest-boy'
-}
-
-export enum ButtonVariants {
-  twilight = 'twilight',
-  twilightGradient = 'twilight-gradient',
-  roseGarden = 'rose-garden',
-  roseGardenGradient = 'rose-garden-gradient',
-  skyline = 'skyline',
-  skylineGradient = 'skyline-gradient'
-}
+import {
+  ShadowStyles, baseShadowHex, HellerSize, HellerVariant,
+} from '../../globals/styles';
 
 export interface ButtonProps {
   children: React.ReactNode;
@@ -29,10 +12,10 @@ export interface ButtonProps {
   style?: CSS.Properties;
   backgroundColor?: string;
   color?: string;
-  size?: ButtonSize;
+  size?: HellerSize;
   shadow?: ShadowStyles | null | undefined;
   shadowColor?: string | null | undefined;
-  variant?: ButtonVariants | null | undefined;
+  variant?: HellerVariant | null | undefined;
   invert?: boolean;
   className?: string;
 }
@@ -44,10 +27,10 @@ export interface ButtonProps {
 export const Button: React.FC<ButtonProps> = ({
   children,
   onClick,
-  backgroundColor = colors.nately.lavenderGray,
+  backgroundColor = colors.yossarian.sea,
   color = '#F3F4F6',
   shadowColor = baseShadowHex,
-  size = ButtonSize.rg,
+  size = HellerSize.rg,
   shadow = null,
   style = {},
   variant = null,
@@ -70,7 +53,6 @@ export const Button: React.FC<ButtonProps> = ({
     switch (variant) {
       case 'twilight':
         background = colors.nately.middleBluePurple;
-        fontColor = colors.nately.darkPurple;
         break;
       case 'twilight-gradient':
         background = `linear-gradient(to right, ${colors.nately.darkPurple}, ${colors.nately.middleBluePurple})`;
@@ -78,18 +60,9 @@ export const Button: React.FC<ButtonProps> = ({
         break;
       case 'rose-garden':
         background = colors.dunbar.amaranthPurple;
-        fontColor = colors.dunbar.lightPink;
         break;
       case 'rose-garden-gradient':
         background = `linear-gradient(to right, ${colors.dunbar.amaranthPurple}, ${colors.dunbar.lightPink})`;
-        fontColor = '#fff';
-        break;
-      case 'skyline':
-        background = colors.dunbar.flourescentBlue;
-        fontColor = colors.dunbar.lightCyan;
-        break;
-      case 'skyline-gradient':
-        background = `linear-gradient(to right, ${colors.dunbar.flourescentBlue}, ${colors.dunbar.lightCyan})`;
         fontColor = '#fff';
         break;
       default:
@@ -97,25 +70,25 @@ export const Button: React.FC<ButtonProps> = ({
   };
 
   const sizeHandler = () => {
-    if (size === ButtonSize.rg) return;
+    if (size === HellerSize.rg) return;
     switch (size) {
-      case ButtonSize.xs:
+      case HellerSize.xs:
         padding = '4px 8px';
         fontSize = '0.5rem';
         break;
-      case ButtonSize.sm:
+      case HellerSize.sm:
         padding = '8px 16px';
         fontSize = '0.75rem';
         break;
-      case ButtonSize.lg:
+      case HellerSize.lg:
         padding = '16px 32px';
         fontSize = '1.75rem';
         break;
-      case ButtonSize.xl:
+      case HellerSize.xl:
         padding = '24px 48px';
         fontSize = '2.25rem';
         break;
-      case ButtonSize.bb:
+      case HellerSize.bb:
         padding = '32px 64px';
         fontSize = '2.75rem';
         break;
@@ -157,7 +130,7 @@ export const Button: React.FC<ButtonProps> = ({
      * ANCHOR:
      * General Styles for all buttons
      */
-    borderRadius: size !== ButtonSize.bb ? '4px' : '8px',
+    borderRadius: size !== HellerSize.bb ? '4px' : '8px',
     border: border || 0,
     cursor: 'pointer',
     display: 'block',

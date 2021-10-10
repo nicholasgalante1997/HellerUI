@@ -1,6 +1,6 @@
 export default {
   yossarian: {
-
+    sea: '#023e8a',
   },
   nately: {
     darkPurple: '#242038',

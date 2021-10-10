@@ -5,19 +5,13 @@
 import React from 'react';
 import CSS from 'csstype';
 import colors from '../../colors';
+import { HellerSize, HellerVariant } from '../../globals/styles';
 
-export enum BadgeSize {
-  xs = 'extra-small',
-  sm = 'small',
-  rg = 'regular',
-  lg = 'large',
-  xl = 'extra-large',
-  bb = 'biggest-boy'
-}
 export interface BadgeProps {
   children: React.ReactNode;
   color?: string;
-  size?: BadgeSize;
+  asNotification?: boolean;
+  size?: HellerSize.xs | HellerSize.sm | HellerSize.rg | HellerSize.lg;
   backgroundColor?: string;
   style?: CSS.Properties;
   onClick?: () => void;
@@ -28,26 +22,41 @@ export const Badge: React.FC<BadgeProps> = ({
   children,
   color = '#fff',
   backgroundColor = colors.cathcart.blackCoral,
-  size = BadgeSize.sm,
+  size = HellerSize.sm,
+  asNotification = false,
   style = {},
   onClick = () => {},
   className = 'heller-ui-badge-default',
 }) => {
   let padding: string = '4px 8px';
-  let fontSize: string = '0.75rem';
+  let fontSize: string = '0.65rem';
   let borderRadius: string = '16px';
+  /**
+   * ANCHOR: we are using the asNotification boolean as a shorthand for setting the xs size
+   * this is with the intention that one can simply render a <Badge asNotification /> in
+   * the event they mean to display a new chat message, etc.
+   */
+  if (asNotification) {
+    // eslint-disable-next-line no-param-reassign
+    size = HellerSize.xs;
+  }
 
   const sizeHandler = () => {
-    if (size === BadgeSize.sm) return;
+    if (size === HellerSize.sm) return;
     switch (size) {
-      case BadgeSize.xs:
-        padding = '2px 4px';
+      case HellerSize.xs:
+        padding = '0px';
         fontSize = '0.5rem';
         break;
-      case BadgeSize.rg:
-        padding = '6px 12px';
-        fontSize = '1rem';
+      case HellerSize.rg:
+        padding = '6px 10px';
+        fontSize = '0.85rem';
         borderRadius = '24px';
+        break;
+      case HellerSize.lg:
+        padding = '12px 16px';
+        fontSize = '1.15rem';
+        borderRadius = '36px';
         break;
       default:
         break;
@@ -60,8 +69,14 @@ export const Badge: React.FC<BadgeProps> = ({
     color,
     backgroundColor,
     padding,
+    display: size === HellerSize.xs ? 'inline-block' : 'inline-flex',
+    minWidth: size === HellerSize.xs ? '10px' : undefined,
+    minHeight: size === HellerSize.xs ? '10px' : undefined,
     fontSize,
     borderRadius,
+    flexDirection: 'row',
+    justifyContent: 'space-evenly',
+    alignItems: 'center',
     border: 0,
     fontFamily: 'Gill Sans, sans-serif',
   };
