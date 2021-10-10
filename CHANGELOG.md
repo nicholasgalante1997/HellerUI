@@ -1,5 +1,11 @@
 # @nicholasgalante1997/hellerui
 
+## 1.0.9
+
+### Patch Changes
+
+- b9d9de9: adjusted default button styles, added a badge!
+
 ## 1.0.8
 
 ### Patch Changes
