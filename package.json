@@ -15,7 +15,7 @@
     "build": "rollup -c",
     "ch-update": "npx changeset",
     "release": "npm run build && npx changeset publish",
-    "chromatic": "npx chromatic --project-token=9590c4673854"
+    "chromatic": "npx chromatic --project-token=9590c4673854 --auto-accept-changes"
   },
   "author": "Nick Galante",
   "license": "ISC",
