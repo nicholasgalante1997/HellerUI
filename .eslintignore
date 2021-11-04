@@ -1,0 +1,6 @@
+lib/**/*
+__mocks__/
+.changeset/**/*
+.github/
+node_modules/
+*.env
