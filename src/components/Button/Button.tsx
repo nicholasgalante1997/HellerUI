@@ -135,7 +135,7 @@ export const Button: React.FC<ButtonProps> = ({
     cursor: 'pointer',
     display: 'block',
     lineHeight: 1,
-    fontFamily: 'Gill Sans, sans-serif',
+    fontFamily: 'Oxygen, sans-serif',
 
     /**
      * ANCHOR:

@@ -78,7 +78,7 @@ export const Badge: React.FC<BadgeProps> = ({
     justifyContent: 'space-evenly',
     alignItems: 'center',
     border: 0,
-    fontFamily: 'Gill Sans, sans-serif',
+    fontFamily: 'Oxygen, sans-serif',
   };
 
   return (
