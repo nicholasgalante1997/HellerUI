@@ -35,7 +35,9 @@ export default {
     resolve(),
     commonjs(),
     typescript({
-      exclude: ['**/*.stories.tsx', '**/*.test.tsx'],
+      tsconfigOverride: {
+        exclude: ['**/*.stories.tsx', '**/*.test.tsx'],
+      },
     }),
     postcss(),
   ],
