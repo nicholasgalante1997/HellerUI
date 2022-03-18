@@ -10,7 +10,7 @@
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watch",
-    "storybook": "start-storybook -p 6006 -c .storybook watch-css -s ./src",
+    "storybook": "start-storybook -p 6006 -c .storybook",
     "build-storybook": "build-storybook",
     "build": "rollup -c",
     "clean": "rm -rf lib",
@@ -22,7 +22,6 @@
   },
   "author": "Nick Galante",
   "license": "ISC",
-  "dependencies": {},
   "devDependencies": {
     "@babel/core": "^7.15.5",
     "@changesets/cli": "^2.17.0",
@@ -39,6 +38,7 @@
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^12.1.0",
     "@types/jest": "^27.0.2",
+    "@types/styled-components": "^5.1.24",
     "@typescript-eslint/eslint-plugin": "^4.31.2",
     "@typescript-eslint/parser": "^4.31.2",
     "babel-loader": "^8.2.2",
@@ -76,6 +76,7 @@
   },
   "peerDependencies": {
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "styled-components": "^5.3.3"
   }
 }

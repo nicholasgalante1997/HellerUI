@@ -22,8 +22,19 @@ module.exports = {
   ],
   rules: {
     'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx', '.ts', '.tsx'] }],
+    'react/destructuring-assignment': 'off',
     'import/no-unresolved': 'off',
     'import/extensions': 'off',
     'no-use-before-define': 'off',
+    'import/no-extraneous-dependencies': [
+      'error',
+      {
+        devDependencies: [
+          '.storybook/**',
+          'src/**/*.stories.*',
+          '**/*.config.js',
+        ],
+      },
+    ],
   },
 };
