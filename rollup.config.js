@@ -30,6 +30,7 @@ export default {
       assets: [
         // You can include directories with the `copy` plugin
         'assets',
+        'index.css',
       ],
     }),
     resolve(),
