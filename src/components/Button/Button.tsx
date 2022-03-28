@@ -1,10 +1,15 @@
+/* eslint-disable react/require-default-props */
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import CSS from 'csstype';
-import colors from '../../colors';
+import colors from '../../globals/styles/colors';
 import {
-  ShadowStyles, baseShadowHex, HellerSize, HellerVariant,
+  baseShadowHex,
+  HellerShadowValue,
+  HellerSizeValue,
+  HellerVariantValue,
 } from '../../globals/styles';
+import '../../index.css';
 
 export interface ButtonProps {
   children: React.ReactNode;
@@ -12,10 +17,10 @@ export interface ButtonProps {
   style?: CSS.Properties;
   backgroundColor?: string;
   color?: string;
-  size?: HellerSize;
-  shadow?: ShadowStyles | null | undefined;
+  size?: HellerSizeValue;
+  shadow?: HellerShadowValue | null | undefined;
   shadowColor?: string | null | undefined;
-  variant?: HellerVariant | null | undefined;
+  variant?: HellerVariantValue | null | undefined;
   invert?: boolean;
   className?: string;
 }
@@ -30,7 +35,7 @@ export const Button: React.FC<ButtonProps> = ({
   backgroundColor = colors.yossarian.sea,
   color = '#F3F4F6',
   shadowColor = baseShadowHex,
-  size = HellerSize.rg,
+  size = 'regular',
   shadow = null,
   style = {},
   variant = null,
@@ -70,25 +75,25 @@ export const Button: React.FC<ButtonProps> = ({
   };
 
   const sizeHandler = () => {
-    if (size === HellerSize.rg) return;
+    if (size === 'regular') return;
     switch (size) {
-      case HellerSize.xs:
+      case 'extra-small':
         padding = '4px 8px';
         fontSize = '0.5rem';
         break;
-      case HellerSize.sm:
+      case 'small':
         padding = '8px 16px';
         fontSize = '0.75rem';
         break;
-      case HellerSize.lg:
+      case 'large':
         padding = '16px 32px';
         fontSize = '1.75rem';
         break;
-      case HellerSize.xl:
+      case 'extra-large':
         padding = '24px 48px';
         fontSize = '2.25rem';
         break;
-      case HellerSize.bb:
+      case 'biggest-boy':
         padding = '32px 64px';
         fontSize = '2.75rem';
         break;
@@ -100,7 +105,7 @@ export const Button: React.FC<ButtonProps> = ({
   const shadowHandler = () => {
     if (!shadow) return;
     switch (shadow) {
-      case ShadowStyles.sharp:
+      case 'sharp':
         boxShadow = `4px 4px ${shadowColor}`;
         break;
       default:
@@ -130,13 +135,14 @@ export const Button: React.FC<ButtonProps> = ({
      * ANCHOR:
      * General Styles for all buttons
      */
-    borderRadius: size !== HellerSize.bb ? '4px' : '8px',
+    borderRadius: size !== 'biggest-boy' ? '4px' : '8px',
     border: border || 0,
     cursor: 'pointer',
     display: 'block',
     lineHeight: 1,
-    fontFamily: 'Gill Sans, sans-serif',
-
+    fontFamily: 'Poppins Regular',
+    fontWeight: 300,
+    fontVariant: 'ruby',
     /**
      * ANCHOR:
      * Dynamic Style Attributes;

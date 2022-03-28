@@ -1,3 +1,4 @@
-export { ShadowStyles, baseShadowHex } from './Shadow';
-export { HellerSize } from './Sizing';
-export { default as HellerVariant } from './Variant';
+export * from './Shadow';
+export * from './Sizing';
+export * from './Variant';
+export { default as colors } from './colors';

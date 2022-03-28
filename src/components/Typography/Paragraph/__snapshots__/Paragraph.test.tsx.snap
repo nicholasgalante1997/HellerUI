@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Paragraph bold 1`] = `
+<p
+  class="sc-dkPtRN bPUqeq"
+>
+  Heller UI
+</p>
+`;
+
+exports[`Paragraph default 1`] = `
+<p
+  class="sc-bdvvtL eJaGZN"
+>
+  Heller UI
+</p>
+`;
+
+exports[`Paragraph dynamic color 1`] = `
+<p
+  class="sc-bdvvtL jSMeSC"
+  color="deeppink"
+>
+  Heller UI
+</p>
+`;
+
+exports[`Paragraph italic & bold 1`] = `
+<p
+  class="sc-hKwDye cBuMLI"
+>
+  Heller UI
+</p>
+`;
+
+exports[`Paragraph italic 1`] = `
+<p
+  class="sc-gsDKAQ drBBFd"
+>
+  Heller UI
+</p>
+`;

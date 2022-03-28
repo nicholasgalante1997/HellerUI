@@ -1,5 +1,4 @@
-import { Properties } from 'csstype';
-import { SafeReactFC } from '../../../utils';
+import { SafeReactFC, WithCustomStyles } from '../../../@types';
 
 export interface StyledHeaderProps {
     color?: string;
@@ -8,7 +7,6 @@ export interface StyledHeaderProps {
 
 export interface NativeHeadingProps {
     as?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
-    customStyles?: Properties;
 }
 
-export type HeadingProps = SafeReactFC<NativeHeadingProps & StyledHeaderProps>;
+export type HeadingProps = WithCustomStyles<SafeReactFC<NativeHeadingProps & StyledHeaderProps>>;

@@ -4,7 +4,7 @@ import { Story, Meta } from '@storybook/react';
 import {
   Button, ButtonProps,
 } from './Button';
-import colors from '../../colors';
+import colors from '../../globals/styles/colors';
 import { ShadowStyles, HellerSize, HellerVariant } from '../../globals/styles';
 
 /*

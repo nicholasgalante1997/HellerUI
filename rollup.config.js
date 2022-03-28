@@ -5,6 +5,8 @@ import commonjs from '@rollup/plugin-commonjs';
 import resolve from '@rollup/plugin-node-resolve';
 import postcss from 'rollup-plugin-postcss';
 import copy from 'rollup-plugin-copy-assets';
+import { visualizer } from 'rollup-plugin-visualizer';
+import analyze from 'rollup-plugin-analyzer';
 import packageJson from './package.json';
 
 export default {
@@ -41,5 +43,14 @@ export default {
       },
     }),
     postcss(),
+    analyze({
+      summaryOnly: true,
+    }),
+    visualizer({
+      title: 'heller-ui dep graph',
+      filename: 'stats/heller-ui-dep-stats.html',
+      open: true,
+      template: 'sunburst',
+    }),
   ],
 };

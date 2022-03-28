@@ -36,4 +36,4 @@ export default {
     flourescentBlue: '#34F6F2',
     lightCyan: '#D1F5FF',
   },
-};
+} as const;

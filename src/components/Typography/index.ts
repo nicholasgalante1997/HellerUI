@@ -1,2 +1,2 @@
-/* eslint-disable import/prefer-default-export */
-export { default as Heading } from './Heading/Heading';
+export { default as Heading } from './Heading';
+export { default as Paragraph } from './Paragraph';

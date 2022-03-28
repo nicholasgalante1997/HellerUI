@@ -3,4 +3,5 @@ import './index.css';
 export { Button } from './components/Button';
 export { Badge } from './components/Badge';
 export * as Typography from './components/Typography';
-export * as HellerStylesProfiles from './globals/styles';
+// eslint-disable-next-line camelcase
+export * as _heller_base from './globals/styles';
