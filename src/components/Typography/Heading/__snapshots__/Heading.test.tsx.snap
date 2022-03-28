@@ -1,0 +1,137 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Heading dynamic color 1`] = `
+<h3
+  class="sc-dkPtRN jgtyWn"
+  color="deeppink"
+  scale="300"
+>
+  Heller UI
+</h3>
+`;
+
+exports[`Heading font weight 1`] = `
+<h3
+  class="sc-dkPtRN gFCwdK"
+  scale="100"
+>
+  Heller UI
+</h3>
+`;
+
+exports[`Heading font weight 2`] = `
+<h3
+  class="sc-dkPtRN gFDjdx"
+  scale="200"
+>
+  Heller UI
+</h3>
+`;
+
+exports[`Heading font weight 3`] = `
+<h3
+  class="sc-dkPtRN gFCWFw"
+  scale="300"
+>
+  Heller UI
+</h3>
+`;
+
+exports[`Heading font weight 4`] = `
+<h3
+  class="sc-dkPtRN gFBKET"
+  scale="400"
+>
+  Heller UI
+</h3>
+`;
+
+exports[`Heading font weight 5`] = `
+<h3
+  class="sc-dkPtRN gFBygS"
+  scale="500"
+>
+  Heller UI
+</h3>
+`;
+
+exports[`Heading font weight 6`] = `
+<h3
+  class="sc-dkPtRN gFClgF"
+  scale="600"
+>
+  Heller UI
+</h3>
+`;
+
+exports[`Heading font weight 7`] = `
+<h3
+  class="sc-dkPtRN gFBYIE"
+  scale="700"
+>
+  Heller UI
+</h3>
+`;
+
+exports[`Heading font weight 8`] = `
+<h3
+  class="sc-dkPtRN gFEKIH"
+  scale="800"
+>
+  Heller UI
+</h3>
+`;
+
+exports[`Heading h1 - h6 snapshots 1`] = `
+<h1
+  class="sc-bdvvtL jXjVYY"
+  scale="300"
+>
+  Heller UI
+</h1>
+`;
+
+exports[`Heading h1 - h6 snapshots 2`] = `
+<h2
+  class="sc-gsDKAQ efoXnq"
+  scale="300"
+>
+  Heller UI
+</h2>
+`;
+
+exports[`Heading h1 - h6 snapshots 3`] = `
+<h3
+  class="sc-dkPtRN gFCWFw"
+  scale="300"
+>
+  Heller UI
+</h3>
+`;
+
+exports[`Heading h1 - h6 snapshots 4`] = `
+<h4
+  class="sc-hKwDye hXKZeI"
+  scale="300"
+>
+  Heller UI
+</h4>
+`;
+
+exports[`Heading h1 - h6 snapshots 5`] = `
+<h5
+  class="sc-eCImPb eAflGw"
+  scale="300"
+>
+  Heller UI
+</h5>
+`;
+
+exports[`Heading h1 - h6 snapshots 6`] = `
+<h6
+  class="sc-jRQBWg ZYKBA"
+  scale="300"
+>
+  Heller UI
+</h6>
+`;

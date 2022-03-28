@@ -11,7 +11,7 @@ import { ChatIcon } from '@heroicons/react/solid';
 /**
  * Internal Dependencies
  */
-import colors from '../../colors';
+import colors from '../../globals/styles/colors';
 import { Badge, BadgeProps } from './Badge';
 import { HellerSize } from '../../globals/styles';
 

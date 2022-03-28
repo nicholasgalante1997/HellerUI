@@ -1,17 +1,18 @@
+/* eslint-disable react/require-default-props */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-shadow */
 import React from 'react';
 import CSS from 'csstype';
-import colors from '../../colors';
+import colors from '../../globals/styles/colors';
 import { HellerSize, HellerVariant } from '../../globals/styles';
 
 export interface BadgeProps {
   children: React.ReactNode;
   color?: string;
   asNotification?: boolean;
-  size?: HellerSize.xs | HellerSize.sm | HellerSize.rg | HellerSize.lg;
+  size?: 'extra-small' | 'small' | 'regular' | 'large';
   backgroundColor?: string;
   style?: CSS.Properties;
   onClick?: () => void;
@@ -78,7 +79,7 @@ export const Badge: React.FC<BadgeProps> = ({
     justifyContent: 'space-evenly',
     alignItems: 'center',
     border: 0,
-    fontFamily: 'Oxygen, sans-serif',
+    fontFamily: 'Poppins Regular',
   };
 
   return (

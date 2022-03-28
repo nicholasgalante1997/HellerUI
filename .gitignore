@@ -1,6 +1,8 @@
 node_modules
 lib
+design
 .eslintcache
 storybook-static
+stats
 .env*
 *.log

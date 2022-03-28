@@ -1,5 +1,11 @@
 # @nicholasgalante1997/hellerui
 
+## 1.0.10
+
+### Patch Changes
+
+- df75d58: 1PR small config tweaks
+
 ## 1.0.9
 
 ### Patch Changes

@@ -1,24 +1,23 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
-import { Meta, Story } from '@storybook/react/types-6-0';
-import { Heading, HeadingProps, HeadingSizes } from './Heading';
+import { Meta, Story } from '@storybook/react';
+import Heading from './Heading';
+import { HeadingProps } from './types';
+import '../../../index.css';
 
 export default {
-  title: 'Heading',
+  title: 'Typography/Heading',
   component: Heading,
+  argTypes: {},
   parameters: {
-    componentSubtitle: 'A typography subset for section titles, page headings, etc.',
+    componentSubtitle: 'a subsection of Typography for title displays.',
   },
 } as Meta;
 
-const Template: Story<HeadingProps> = (args) => (<Heading {...args}>Heller UI</Heading>);
+const Template: Story<HeadingProps> = (args) => <Heading {...args}>Seymour Skinner</Heading>;
 
 export const Default = Template.bind({});
-Default.args = {};
-
-export const Sizes = (args: any) => (
-  <div style={{ padding: 8 }}>
-    <Heading asHeading={HeadingSizes.H1} {...args}>Heller UI</Heading>
-    <Heading asHeading={HeadingSizes.H2} {...args}>Heller UI</Heading>
-  </div>
-);
+Default.args = {
+  as: 'h2',
+  color: 'violet',
+};

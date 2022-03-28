@@ -1,16 +1,18 @@
 {
   "name": "@nickgdev/hellerui",
-  "version": "1.0.9",
+  "version": "0.0.15",
   "description": "",
   "main": "lib/index.js",
   "module": "lib/index.esm.js",
+  "types": "lib/index.d.ts",
+  "readme": "README.md",
   "files": [
     "lib"
   ],
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watch",
-    "storybook": "start-storybook -p 6006 -c .storybook watch-css -s ./src",
+    "storybook": "start-storybook -p 6006 -c .storybook",
     "build-storybook": "build-storybook",
     "build": "rollup -c",
     "clean": "rm -rf lib",
@@ -22,7 +24,6 @@
   },
   "author": "Nick Galante",
   "license": "ISC",
-  "dependencies": {},
   "devDependencies": {
     "@babel/core": "^7.15.5",
     "@changesets/cli": "^2.17.0",
@@ -34,11 +35,14 @@
     "@storybook/addon-docs": "^6.3.8",
     "@storybook/addon-essentials": "^6.3.8",
     "@storybook/addon-links": "^6.3.8",
+    "@storybook/addons": "^6.4.19",
     "@storybook/preset-scss": "^1.0.3",
     "@storybook/react": "^6.3.8",
+    "@storybook/theming": "^6.4.19",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^12.1.0",
     "@types/jest": "^27.0.2",
+    "@types/styled-components": "^5.1.24",
     "@typescript-eslint/eslint-plugin": "^4.31.2",
     "@typescript-eslint/parser": "^4.31.2",
     "babel-loader": "^8.2.2",
@@ -63,11 +67,13 @@
     "react-spring": "^9.2.5",
     "resolve-url-loader": "^4.0.0",
     "rollup": "^2.57.0",
+    "rollup-plugin-analyzer": "^4.0.0",
     "rollup-plugin-cleaner": "^1.0.0",
     "rollup-plugin-copy-assets": "^2.0.3",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^4.0.1",
     "rollup-plugin-typescript2": "^0.30.0",
+    "rollup-plugin-visualizer": "^5.6.0",
     "sass": "^1.42.1",
     "sass-loader": "^10.1.1",
     "style-loader": "^2.0.0",
@@ -76,6 +82,8 @@
   },
   "peerDependencies": {
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "react-spring": "^9.2.5",
+    "styled-components": "^5.3.3"
   }
 }
