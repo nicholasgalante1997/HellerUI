@@ -106,7 +106,7 @@ export const Button: React.FC<ButtonProps> = ({
     if (!shadow) return;
     switch (shadow) {
       case 'sharp':
-        boxShadow = `4px 4px ${shadowColor}`;
+        boxShadow = `4px 4px 2px ${shadowColor}`;
         break;
       default:
         break;

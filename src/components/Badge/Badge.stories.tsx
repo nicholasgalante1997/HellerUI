@@ -28,37 +28,37 @@ export default {
   },
 } as Meta;
 
-const Template: Story<BadgeProps> = (args) => <Badge {...args}>New!</Badge>;
+// const Template: Story<BadgeProps> = (args) => <Badge {...args}>New!</Badge>;
 
-export const Default = Template.bind({});
-Default.args = {};
+// export const Default = Template.bind({});
+// Default.args = {};
 
-export const Sizes = (args: any) => (
-  <div>
-    <div>
-      <Badge size={HellerSize.xs} {...args} />
-    </div>
-    <div style={{ marginTop: 10 }}>
-      <Badge size={HellerSize.sm} {...args}>New!</Badge>
-    </div>
-    <div style={{ marginTop: 15 }}>
-      <Badge size={HellerSize.rg} {...args}>New!</Badge>
-    </div>
-    <div style={{ marginTop: 25 }}>
-      <Badge size={HellerSize.lg} {...args}>
-        <ChatIcon width={40} height={40} />
-        New!
-      </Badge>
-    </div>
-  </div>
-);
-Sizes.args = {
-  backgroundColor: colors.mcwatt.flickrPink,
-};
+// export const Sizes = (args: any) => (
+//   <div>
+//     <div>
+//       <Badge size={HellerSize.xs} {...args} />
+//     </div>
+//     <div style={{ marginTop: 10 }}>
+//       <Badge size={HellerSize.sm} {...args}>New!</Badge>
+//     </div>
+//     <div style={{ marginTop: 15 }}>
+//       <Badge size={HellerSize.rg} {...args}>New!</Badge>
+//     </div>
+//     <div style={{ marginTop: 25 }}>
+//       <Badge size={HellerSize.lg} {...args}>
+//         <ChatIcon width={40} height={40} />
+//         New!
+//       </Badge>
+//     </div>
+//   </div>
+// );
+// Sizes.args = {
+//   backgroundColor: colors.mcwatt.flickrPink,
+// };
 
-export const Notification = (args: any) => (
-  <div>
-    <ChatIcon height={48} width={48} />
-    <Badge asNotification {...args} />
-  </div>
-);
+// export const Notification = (args: any) => (
+//   <div>
+//     <ChatIcon height={48} width={48} />
+//     <Badge asNotification {...args} />
+//   </div>
+// );

@@ -2,7 +2,7 @@
 
 exports[`Paragraph bold 1`] = `
 <p
-  class="sc-dkPtRN bPUqeq"
+  class="sc-dkzDqf cIYcjd"
 >
   Heller UI
 </p>
@@ -10,7 +10,7 @@ exports[`Paragraph bold 1`] = `
 
 exports[`Paragraph default 1`] = `
 <p
-  class="sc-bdvvtL eJaGZN"
+  class="sc-bczRLJ eYHBae"
 >
   Heller UI
 </p>
@@ -18,7 +18,7 @@ exports[`Paragraph default 1`] = `
 
 exports[`Paragraph dynamic color 1`] = `
 <p
-  class="sc-bdvvtL jSMeSC"
+  class="sc-bczRLJ cOywHh"
   color="deeppink"
 >
   Heller UI
@@ -27,7 +27,7 @@ exports[`Paragraph dynamic color 1`] = `
 
 exports[`Paragraph italic & bold 1`] = `
 <p
-  class="sc-hKwDye cBuMLI"
+  class="sc-hKMtZM kOUGb"
 >
   Heller UI
 </p>
@@ -35,7 +35,7 @@ exports[`Paragraph italic & bold 1`] = `
 
 exports[`Paragraph italic 1`] = `
 <p
-  class="sc-gsDKAQ drBBFd"
+  class="sc-gsnTZi jleSwx"
 >
   Heller UI
 </p>

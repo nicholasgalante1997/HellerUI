@@ -2,7 +2,7 @@
 
 exports[`Heading dynamic color 1`] = `
 <h3
-  class="sc-dkPtRN jgtyWn"
+  class="sc-dkzDqf dbysmQ"
   color="deeppink"
   scale="300"
 >
@@ -12,7 +12,7 @@ exports[`Heading dynamic color 1`] = `
 
 exports[`Heading font weight 1`] = `
 <h3
-  class="sc-dkPtRN gFCwdK"
+  class="sc-dkzDqf gGQvWN"
   scale="100"
 >
   Heller UI
@@ -21,7 +21,7 @@ exports[`Heading font weight 1`] = `
 
 exports[`Heading font weight 2`] = `
 <h3
-  class="sc-dkPtRN gFDjdx"
+  class="sc-dkzDqf gGQIxi"
   scale="200"
 >
   Heller UI
@@ -30,7 +30,7 @@ exports[`Heading font weight 2`] = `
 
 exports[`Heading font weight 3`] = `
 <h3
-  class="sc-dkPtRN gFCWFw"
+  class="sc-dkzDqf gGPVvb"
   scale="300"
 >
   Heller UI
@@ -39,7 +39,7 @@ exports[`Heading font weight 3`] = `
 
 exports[`Heading font weight 4`] = `
 <h3
-  class="sc-dkPtRN gFBKET"
+  class="sc-dkzDqf gGSgVM"
   scale="400"
 >
   Heller UI
@@ -48,7 +48,7 @@ exports[`Heading font weight 4`] = `
 
 exports[`Heading font weight 5`] = `
 <h3
-  class="sc-dkPtRN gFBygS"
+  class="sc-dkzDqf gGRtTF"
   scale="500"
 >
   Heller UI
@@ -57,7 +57,7 @@ exports[`Heading font weight 5`] = `
 
 exports[`Heading font weight 6`] = `
 <h3
-  class="sc-dkPtRN gFClgF"
+  class="sc-dkzDqf gGRGua"
   scale="600"
 >
   Heller UI
@@ -66,7 +66,7 @@ exports[`Heading font weight 6`] = `
 
 exports[`Heading font weight 7`] = `
 <h3
-  class="sc-dkPtRN gFBYIE"
+  class="sc-dkzDqf gGQTrT"
   scale="700"
 >
   Heller UI
@@ -75,7 +75,7 @@ exports[`Heading font weight 7`] = `
 
 exports[`Heading font weight 8`] = `
 <h3
-  class="sc-dkPtRN gFEKIH"
+  class="sc-dkzDqf gGTlfQ"
   scale="800"
 >
   Heller UI
@@ -84,7 +84,7 @@ exports[`Heading font weight 8`] = `
 
 exports[`Heading h1 - h6 snapshots 1`] = `
 <h1
-  class="sc-bdvvtL jXjVYY"
+  class="sc-bczRLJ eqPlRr"
   scale="300"
 >
   Heller UI
@@ -93,7 +93,7 @@ exports[`Heading h1 - h6 snapshots 1`] = `
 
 exports[`Heading h1 - h6 snapshots 2`] = `
 <h2
-  class="sc-gsDKAQ efoXnq"
+  class="sc-gsnTZi krRSEC"
   scale="300"
 >
   Heller UI
@@ -102,7 +102,7 @@ exports[`Heading h1 - h6 snapshots 2`] = `
 
 exports[`Heading h1 - h6 snapshots 3`] = `
 <h3
-  class="sc-dkPtRN gFCWFw"
+  class="sc-dkzDqf gGPVvb"
   scale="300"
 >
   Heller UI
@@ -111,7 +111,7 @@ exports[`Heading h1 - h6 snapshots 3`] = `
 
 exports[`Heading h1 - h6 snapshots 4`] = `
 <h4
-  class="sc-hKwDye hXKZeI"
+  class="sc-hKMtZM kNumkD"
   scale="300"
 >
   Heller UI
@@ -120,7 +120,7 @@ exports[`Heading h1 - h6 snapshots 4`] = `
 
 exports[`Heading h1 - h6 snapshots 5`] = `
 <h5
-  class="sc-eCImPb eAflGw"
+  class="sc-eCYdqJ eSiTaG"
   scale="300"
 >
   Heller UI
@@ -129,7 +129,7 @@ exports[`Heading h1 - h6 snapshots 5`] = `
 
 exports[`Heading h1 - h6 snapshots 6`] = `
 <h6
-  class="sc-jRQBWg ZYKBA"
+  class="sc-jSMfEi dSMsvX"
   scale="300"
 >
   Heller UI
