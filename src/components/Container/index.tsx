@@ -10,7 +10,7 @@ import {
 const Container = (props: ContainerProps) => {
   const {
     children,
-    radius,
+    radius = 'normal',
     padding = '4px',
     margin = '0px',
     background = null,
@@ -25,8 +25,8 @@ const Container = (props: ContainerProps) => {
     ref,
     customStyles = {},
     ariaLabel = 'Content Container',
-    id = 'heller-container',
-    className = 'heller-container-c',
+    id = 'heller-container-id',
+    className = 'heller-container-cl',
     onClick = null,
     onMouseEnter = null,
     onMouseLeave = null,
@@ -58,7 +58,8 @@ const Container = (props: ContainerProps) => {
   }
 
   const nativeStyles: Properties = {
-    borderRadius: radius === 'rounded' ? '6px' : '2px',
+    // eslint-disable-next-line no-nested-ternary
+    borderRadius: radius === 'rounded' ? '6px' : radius === 'normal' ? '2px' : '0px',
     overflow: 'hidden',
     padding,
     margin,
@@ -88,7 +89,7 @@ const Container = (props: ContainerProps) => {
           ref={localRef}
           className={className}
           id={id}
-          data-testid="container"
+          data-testid="grid container"
           aria-label={ariaLabel ?? undefined}
           onClick={onClick ?? undefined}
           onMouseEnter={onMouseEnter ?? undefined}
@@ -102,27 +103,12 @@ const Container = (props: ContainerProps) => {
 
   if (asGridChild) {
     const { rows } = useGridContext();
-    if (rows < 12 && colSpan > 4) {
+    if (rows < 12 && colSpan > 6) {
       console.warn('<Container/> Grid Child Issue: Grid Column Child has greater colspan than parent grid container. aborting grid schema.');
     } else {
       nativeStyles.width = `${Math.floor((colSpan / rows) * 100).toString()}%`;
       nativeStyles.margin = '4px 0px 0px 4px';
       nativeStyles.boxSizing = 'border-box';
-      return (
-        <div
-          style={{ ...nativeStyles, ...customStyles }}
-          ref={localRef}
-          className={className}
-          id={id}
-          data-testid="container"
-          aria-label={ariaLabel ?? undefined}
-          onClick={onClick ?? undefined}
-          onMouseEnter={onMouseEnter ?? undefined}
-          onMouseLeave={onMouseLeave ?? undefined}
-        >
-          {children}
-        </div>
-      );
     }
   }
 

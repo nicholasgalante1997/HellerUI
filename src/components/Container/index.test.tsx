@@ -50,4 +50,8 @@ describe('Container', () => {
     const { container } = render(<Container height={100} width={200} radius="rounded" />);
     expect(container.firstChild).toHaveStyle('border-radius: 6px;');
   });
+  test('radius none', () => {
+    const { container } = render(<Container height={100} width={200} radius="none" />);
+    expect(container.firstChild).toHaveStyle('border-radius: 0px;');
+  });
 });

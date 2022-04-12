@@ -1,12 +1,14 @@
 # Heller UI
 
-![Orr](/lib/assets/orr.jpeg)
+![Orr](https://d3d00swyhr67nd.cloudfront.net/w944h944/collection/IWM/IWM/IWM_IWM_16784_5-001.jpg)
 
 ## A Note From The Maintainer
 
+![Hey Everybody!](https://c.tenor.com/ny2kroyiSI4AAAAC/hi-everybody-simpsons.gif)
+
 *Hey there everybody!*  
 
-I hope you are having a great night! As i should have mentioned much earlier, this react component library/ui-kit is very much so a work in progress! Moving forward, all versions until *release* will be versioned under 1.0.0. That means that the most up to date version at the time of writing is 0.0.17! If you are on that version, you are killing it!  
+I hope you are having a great night! As i should have mentioned much earlier, this react component library/ui-kit is very much so a work in progress! Moving forward, all versions until *release* will be versioned under 1.0.0. That means that the most up to date version at the time of writing is 0.0.18! If you are on that version, you are killing it!  
 
 If you'd like to leave feedback about the package, please feel free to raise an issue on our github!  
 
@@ -30,7 +32,7 @@ or
 ```typescript
 
 import React from 'react';
-import { Button, Typography } from '@nickgdev/hellerui';
+import { Typography } from '@nickgdev/hellerui';
 import '@nickgdev/hellerui/index.css'
 
 const { Heading, Paragraph } = Typography;

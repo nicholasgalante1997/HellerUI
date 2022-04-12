@@ -2,7 +2,7 @@ import React from 'react';
 import { SafeReactFC, WithCustomStyles } from '../../@types';
 
 export type NativeContainerProps = {
-    radius?: 'rounded' | 'normal';
+    radius?: 'rounded' | 'normal' | 'none';
     background?: string;
     gradient?: {
         to: string;
