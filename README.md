@@ -1,12 +1,12 @@
 # Heller UI
 
-![Orr](/assets/orr.jpeg)
+![Orr](/lib/assets/orr.jpeg)
 
 ## A Note From The Maintainer
 
 *Hey there everybody!*  
 
-I hope you are having a great night! As i should have mentioned much earlier, this react component library/ui-kit is very much so a work in progress! Moving forward, all versions until *release* will be versioned under 1.0.0. That means that the most up to date version at the time of writing is 0.0.16! If you are on that version, you are killing it!  
+I hope you are having a great night! As i should have mentioned much earlier, this react component library/ui-kit is very much so a work in progress! Moving forward, all versions until *release* will be versioned under 1.0.0. That means that the most up to date version at the time of writing is 0.0.17! If you are on that version, you are killing it!  
 
 If you'd like to leave feedback about the package, please feel free to raise an issue on our github!  
 
@@ -54,4 +54,4 @@ Are you thinking to yourself?
 
 Well now you can fiddle around with our SB instance and see if it fits your use case. 
 
-![hellerui](https://615213bb7c9f60003aa5ec0d-bqyadxoyjo.chromatic.com/?path=/story/container--default)
+[hellerui](https://615213bb7c9f60003aa5ec0d-bqyadxoyjo.chromatic.com/?path=/story/container--default)
