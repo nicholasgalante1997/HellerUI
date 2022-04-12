@@ -1,20 +1,20 @@
 # Heller UI
 
-![Orr](/src/assets/orr.jpeg)
+![Orr](/assets/orr.jpeg)
 
 ## A Note From The Maintainer
 
 *Hey there everybody!*  
 
-I hope you are having a great night! As i should have mentioned much earlier, this react component library/ui-kit is very much so a work in progress! Moving forward, all versions until *release* will be versioned under 1.0.0. That means that the most up to date version at the time of writing is 0.0.15! If you are on that version, you are killing it!  
+I hope you are having a great night! As i should have mentioned much earlier, this react component library/ui-kit is very much so a work in progress! Moving forward, all versions until *release* will be versioned under 1.0.0. That means that the most up to date version at the time of writing is 0.0.16! If you are on that version, you are killing it!  
 
 If you'd like to leave feedback about the package, please feel free to raise an issue on our github!  
 
-Right now components that are available for consumption are: 
+Right now components that are available for consumption are:
 
 * Typography (Heading & Paragraph)
 * Button  
-
+* Container (Grid Layout via Container is available experimentally!)
 ## Installation
 
 To get started, run
@@ -36,16 +36,22 @@ import '@nickgdev/hellerui/index.css'
 const { Heading, Paragraph } = Typography;
 
 const MyPage = () => {
-    const onSubmit = () => { /** some post logic */};
     return (
       <section>
-         <Heading as="h1" color="violet">My Website!</Heading>
-         <Paragraph italic>Join now!</Paragraph>
-         <Button onClick={onSubmit} color="white" backgroundColor="darkblue">
-           <p>Submit</p>
-         </Button>
+         <Heading as="h1" color="violet">Heller UI!</Heading>
+         <Paragraph italic>Thats some catch!</Paragraph>
       <section>
     );
 };
 
 ```
+
+### Heller UI Storybook is open access on Chromatic now!
+
+Are you thinking to yourself? 
+
+*Is this package something __I__ want to install?*
+
+Well now you can fiddle around with our SB instance and see if it fits your use case. 
+
+![hellerui](https://615213bb7c9f60003aa5ec0d-bqyadxoyjo.chromatic.com/?path=/story/container--default)
