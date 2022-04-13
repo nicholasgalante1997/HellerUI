@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import { Properties } from 'csstype';
@@ -22,7 +23,6 @@ const Container = (props: ContainerProps) => {
     height,
     width,
     opacity,
-    ref,
     customStyles = {},
     ariaLabel = 'Content Container',
     id = 'heller-container-id',
@@ -31,8 +31,6 @@ const Container = (props: ContainerProps) => {
     onMouseEnter = null,
     onMouseLeave = null,
   } = props;
-
-  const localRef = ref ?? React.useRef<HTMLDivElement>(null);
 
   const backgroundStyles: Pick<Properties,
     'backgroundImage' |
@@ -54,7 +52,8 @@ const Container = (props: ContainerProps) => {
   }
 
   if (gradient) {
-    backgroundStyles.background = `linear-gradient(${gradient.flow ?? 'to right'}, ${gradient.from}, ${gradient.to})`;
+    if (gradient.covenant) backgroundStyles.background = gradient.covenant.overrideAndDangerouslySetGradient;
+    else backgroundStyles.background = `linear-gradient(${gradient.flow ?? 'to right'}, ${gradient?.from}, ${gradient?.to})`;
   }
 
   const nativeStyles: Properties = {
@@ -65,6 +64,7 @@ const Container = (props: ContainerProps) => {
     margin,
     display: 'flex',
     flexWrap: 'wrap',
+    flexDirection: asGridParent ? 'row' : 'column',
     ...backgroundStyles,
   };
 
@@ -86,7 +86,6 @@ const Container = (props: ContainerProps) => {
       <GridProvider value={defaultContext}>
         <div
           style={{ ...nativeStyles, ...customStyles }}
-          ref={localRef}
           className={className}
           id={id}
           data-testid="grid container"
@@ -115,7 +114,6 @@ const Container = (props: ContainerProps) => {
   return (
     <div
       style={{ ...nativeStyles, ...customStyles }}
-      ref={localRef}
       className={className}
       id={id}
       data-testid="container"

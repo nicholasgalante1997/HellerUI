@@ -1,0 +1,19 @@
+{
+  "name": "next-example",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@nickgdev/hellerui": "^0.0.18",
+    "next": "12.1.5",
+    "react": "18.0.0",
+    "react-dom": "18.0.0",
+    "styled-components": "^5.3.5"
+  },
+  "devDependencies": {}
+}

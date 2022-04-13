@@ -1,14 +1,12 @@
 import React from 'react';
-import { SafeReactFC, WithCustomStyles } from '../../@types';
+import {
+  SafeReactFC, WithCustomStyles, Gradient,
+} from '../../@types';
 
 export type NativeContainerProps = {
     radius?: 'rounded' | 'normal' | 'none';
     background?: string;
-    gradient?: {
-        to: string;
-        from: string;
-        flow?: string;
-    };
+    gradient?: Gradient;
     width?: string | number;
     height?: string | number;
     opacity?: number;
@@ -28,4 +26,4 @@ export type NativeContainerProps = {
 >>
 
 export type ContainerProps =
-    SafeReactFC<WithCustomStyles<NativeContainerProps>, HTMLDivElement>;
+    SafeReactFC<WithCustomStyles<NativeContainerProps>>;

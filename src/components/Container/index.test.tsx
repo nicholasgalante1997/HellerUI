@@ -27,7 +27,7 @@ describe('Container', () => {
       to: 'pink',
       from: 'purple',
       flow: 'to left',
-    };
+    } as const;
     const { container } = render(<Container height={100} width={200} gradient={gradient} />);
     expect(container.firstChild).toHaveStyle(`background: linear-gradient(${gradient.flow}, ${gradient.from}, ${gradient.to});`);
   });
