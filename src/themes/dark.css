@@ -1,0 +1,12 @@
+html 
+body {
+    background: rgb(35, 43, 43);
+}
+
+h1,h2,h3,h4,h5,h6 {
+    color: rgba(270, 270, 270, 0.9);
+}
+
+p {
+    color: rgba(270, 270, 270, 0.9);
+}
