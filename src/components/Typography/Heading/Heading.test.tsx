@@ -13,7 +13,7 @@ describe('Heading', () => {
     for (const hState of headingStates) {
       const { container } = render(<Heading as={hState}>Heller UI</Heading>);
       expect(container.firstChild).toBeInTheDocument();
-      expect(container.firstChild).toHaveStyle('font-family: \'Poppins Regular\';');
+      expect(container.firstChild).toHaveStyle('font-family: \'Poppins Bold\';');
       expect(container.firstChild).toMatchSnapshot();
     }
   });

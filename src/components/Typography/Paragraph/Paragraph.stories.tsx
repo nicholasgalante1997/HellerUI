@@ -24,4 +24,5 @@ Default.args = {
   color: 'violet',
   bold: false,
   italic: false,
+  thin: false,
 };

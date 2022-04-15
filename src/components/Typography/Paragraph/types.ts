@@ -5,6 +5,7 @@ export type NativeParagraphProps = {
     fontSize?: number;
     bold?: boolean;
     italic?: boolean;
+    thin?: boolean;
 };
 
 export type ParagraphProps = WithCustomStyles<SafeReactFC<NativeParagraphProps>>;

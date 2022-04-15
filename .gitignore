@@ -1,6 +1,7 @@
 node_modules
 lib
 design
+npm-pack
 .eslintcache
 storybook-static
 stats

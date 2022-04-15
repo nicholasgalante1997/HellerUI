@@ -27,3 +27,7 @@
     font-weight: 200;
     margin: 0rem;
 }
+
+.italic {
+    font-style: italic;
+}

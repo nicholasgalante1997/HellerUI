@@ -23,7 +23,8 @@ describe('Paragraph', () => {
   test('italic', () => {
     const { container } = render(<Paragraph italic>Heller UI</Paragraph>);
     expect(container.firstChild).toBeInTheDocument();
-    expect(container.firstChild).toHaveStyle('font-style: italic;');
+    expect(container.firstChild).toHaveStyle('font-family: \'Poppins Italic\';');
+    expect(container.firstChild).toHaveStyle('font-style: normal;');
     expect(container.firstChild).toMatchSnapshot();
   });
   test('bold', () => {
@@ -35,8 +36,8 @@ describe('Paragraph', () => {
   test('italic & bold', () => {
     const { container } = render(<Paragraph italic bold>Heller UI</Paragraph>);
     expect(container.firstChild).toBeInTheDocument();
-    expect(container.firstChild).toHaveStyle('font-style: oblique 45deg;');
-    expect(container.firstChild).toHaveStyle('font-weight: 800;');
+    expect(container.firstChild).toHaveStyle('font-style: normal;');
+    expect(container.firstChild).toHaveStyle('font-family: \'Poppins BoldItalic\';');
     expect(container.firstChild).toMatchSnapshot();
   });
 });
