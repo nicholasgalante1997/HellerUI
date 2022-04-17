@@ -1,4 +1,5 @@
 import React from 'react';
+
 import {
   Paragraph, ParagraphBold, ParagraphItalic, ParagraphBoldItalic, ParagraphThin,
 } from './Styles';
