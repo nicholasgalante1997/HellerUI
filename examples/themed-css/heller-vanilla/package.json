@@ -30,6 +30,6 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.13.10",
-    "@nickgdev/hellerui": "^0.0.20"
+    "@nickgdev/hellerui": "^0.0.21"
   }
 }

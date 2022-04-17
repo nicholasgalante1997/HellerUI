@@ -1,5 +1,6 @@
 import { Button, Typography, Container } from '@nickgdev/hellerui';
 import '@nickgdev/hellerui/lib/index.css';
+import '@nickgdev/hellerui/lib/themes/pinched.css';
 import '@nickgdev/hellerui/lib/themes/dark.css';
 import './App.css';
 

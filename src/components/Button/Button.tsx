@@ -2,26 +2,26 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import CSS from 'csstype';
+import ColorScale from 'color-scales';
+import { Gradient } from '../../@types';
 import colors from '../../globals/styles/colors';
-import {
-  baseShadowHex,
-  HellerShadowValue,
-  HellerSizeValue,
-  HellerVariantValue,
-} from '../../globals/styles';
+import { formatGradient } from '../../utils';
 import '../../index.css';
 
 export interface ButtonProps {
   children: React.ReactNode;
+  asGradient?: boolean;
+  gradient?: Gradient;
+  borderColor?: string;
   onClick?: () => void;
   style?: CSS.Properties;
   backgroundColor?: string;
   color?: string;
-  size?: HellerSizeValue;
-  shadow?: HellerShadowValue | null | undefined;
-  shadowColor?: string | null | undefined;
-  variant?: HellerVariantValue | null | undefined;
-  invert?: boolean;
+  size?: 'sm' | 'md' | 'lg';
+  height?: string | null;
+  width?: string | null;
+  fullWidth?: boolean;
+  ghost?: boolean;
   className?: string;
 }
 
@@ -33,89 +33,60 @@ export const Button: React.FC<ButtonProps> = ({
   children,
   onClick,
   backgroundColor = colors.yossarian.sea,
+  asGradient = null,
+  gradient = null,
   color = '#F3F4F6',
-  shadowColor = baseShadowHex,
-  size = 'regular',
-  shadow = null,
+  borderColor,
+  size = 'md',
   style = {},
-  variant = null,
-  invert = false,
+  ghost = false,
   className = null,
+  height,
+  width,
+  fullWidth = false,
 }) => {
+  const [active, setActive] = React.useState(false);
+  const onMouseEnter = () => setActive(true);
+  const onMouseLeave = () => setActive(false);
   /**
    * ANCHOR:
    * Dynamic style attributes
    */
-  let background = backgroundColor;
-  let fontColor = color;
-  let padding = '10px 20px';
-  let fontSize = '1rem';
-  let border = null;
-  let boxShadow: string | null = null;
 
-  const variantHandler = () => {
-    if (!variant) return;
-    switch (variant) {
-      case 'twilight':
-        background = colors.nately.middleBluePurple;
-        break;
-      case 'twilight-gradient':
-        background = `linear-gradient(to right, ${colors.nately.darkPurple}, ${colors.nately.middleBluePurple})`;
-        fontColor = '#fff';
-        break;
-      case 'rose-garden':
-        background = colors.dunbar.amaranthPurple;
-        break;
-      case 'rose-garden-gradient':
-        background = `linear-gradient(to right, ${colors.dunbar.amaranthPurple}, ${colors.dunbar.lightPink})`;
-        fontColor = '#fff';
-        break;
-      default:
-    }
-  };
+  const colorPalette = new ColorScale(0, 100, [backgroundColor, '#000000']);
+
+  let background = active
+    ? colorPalette.getColor(40).toHexString()
+    : backgroundColor;
+  let fontColor = color;
+  let padding = '0.25rem 0.5rem';
+  let fontSize = '0.75rem';
+  let minWidth = '3rem';
+  let minHeight = '1.5rem';
+  let border = borderColor
+    ? `1px solid ${borderColor}`
+    : '1px solid rgba(0,0,0,0.4)';
 
   const sizeHandler = () => {
-    if (size === 'regular') return;
+    if (size === 'md') return;
     switch (size) {
-      case 'extra-small':
-        padding = '4px 8px';
+      case 'sm':
         fontSize = '0.5rem';
+        minWidth = '2.5rem';
+        minHeight = '1.25rem';
         break;
-      case 'small':
-        padding = '8px 16px';
-        fontSize = '0.75rem';
-        break;
-      case 'large':
-        padding = '16px 32px';
-        fontSize = '1.75rem';
-        break;
-      case 'extra-large':
-        padding = '24px 48px';
-        fontSize = '2.25rem';
-        break;
-      case 'biggest-boy':
-        padding = '32px 64px';
-        fontSize = '2.75rem';
+      case 'lg':
+        padding = '0.75rem 1rem';
+        fontSize = '1rem';
+        minWidth = '3.5rem';
+        minHeight = '1.75rem';
         break;
       default:
         break;
     }
   };
 
-  const shadowHandler = () => {
-    if (!shadow) return;
-    switch (shadow) {
-      case 'sharp':
-        boxShadow = `4px 4px 2px ${shadowColor}`;
-        break;
-      default:
-        break;
-    }
-  };
-
-  variantHandler();
   sizeHandler();
-  shadowHandler();
 
   /**
    * ANCHOR:
@@ -123,26 +94,28 @@ export const Button: React.FC<ButtonProps> = ({
    * if `true` && variant isn't of a gradient type,
    * we flip background and border values;
    */
-  const validateNonGradient: () => boolean = () => variant?.split('-')[-1] !== 'gradient';
-  if (invert && validateNonGradient()) {
+  if (ghost && !asGradient) {
     border = `1px solid ${background}`;
     fontColor = background;
-    background = '#fff';
+    background = borderColor ?? 'inherit';
+  } else {
+    border = borderColor ?? '1px solid rgba(0,0,0,0.7)';
   }
+
+  if (asGradient && gradient) background = formatGradient(gradient).background;
 
   const buttonStyles: CSS.Properties = {
     /**
      * ANCHOR:
      * General Styles for all buttons
      */
-    borderRadius: size !== 'biggest-boy' ? '4px' : '8px',
+    borderRadius: '0.25rem',
     border: border || 0,
     cursor: 'pointer',
     display: 'block',
     lineHeight: 1,
-    fontFamily: 'Poppins Regular',
+    fontFamily: 'Poppins Bold',
     fontWeight: 300,
-    fontVariant: 'ruby',
     /**
      * ANCHOR:
      * Dynamic Style Attributes;
@@ -151,12 +124,19 @@ export const Button: React.FC<ButtonProps> = ({
     color: fontColor,
     padding,
     fontSize,
-    boxShadow: boxShadow ?? 'none',
+    minHeight,
+    minWidth,
   };
+
+  if (height) Object.assign(buttonStyles, { height });
+  if (width) Object.assign(buttonStyles, { width });
+  if (fullWidth) Object.assign(buttonStyles, { width: '100%' });
 
   return (
     <button
-      className={className ?? 'hellerui-default-button'}
+      className={`withHover ${className ?? 'hellerui-default-button'}`}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
       type="button"
       onClick={onClick}
       style={{ ...buttonStyles, ...style }}

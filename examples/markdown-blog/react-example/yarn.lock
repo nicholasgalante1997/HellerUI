@@ -1385,10 +1385,10 @@
   resolved "https://registry.yarnpkg.com/@leichtgewicht/ip-codec/-/ip-codec-2.0.3.tgz#0300943770e04231041a51bd39f0439b5c7ab4f0"
   integrity sha512-nkalE/f1RvRGChwBnEIoBfSEYOXnCRdleKuv6+lePbMDrMZXeDQnqak5XDOeBgrPPyPfAdcCu/B5z+v3VhplGg==
 
-"@nickgdev/hellerui@^0.0.20":
-  version "0.0.20"
-  resolved "https://registry.yarnpkg.com/@nickgdev/hellerui/-/hellerui-0.0.20.tgz#58ab44c53b869e63a9ca6dc93242ac3f6bdc4b96"
-  integrity sha512-t3HPKgAcV1cjcfL7o4G60KoCIDWf/y5GkfMf7mNph6kjGj1PQ8/WQ+2biwPYw2v8n0QWRW8xuegcBobJ59aPrg==
+"@nickgdev/hellerui@^0.0.21":
+  version "0.0.21"
+  resolved "https://registry.yarnpkg.com/@nickgdev/hellerui/-/hellerui-0.0.21.tgz#c4aa0be3f70b368ae193747b1d848872eb808d0b"
+  integrity sha512-SBuV5bj0IPKOnFDFunSZjKdEgY/+exVodWPmQngXk4mcoDaXC99SzSD6GAyGIgxvlrIbcYq3SpbfAgw26aTHNw==
 
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"
