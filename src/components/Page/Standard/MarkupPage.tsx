@@ -7,45 +7,10 @@ import { HellerSection } from '../shared/Section';
 import { HellerDivider, defaultState as dividerDefaultState } from '../../Divider/Divider';
 import { Break } from '../../Break/Break';
 import ActionBar from '../shared/ActionBar';
+import { getSubtitleFontStyles } from '../utils';
+import { contentEngine } from '../utils/contentEngine';
 
 const { Paragraph, Heading } = Font;
-
-function contentEngine(content: string | string[] | string[][] | JSX.Element) {
-  if (Array.isArray(content)) {
-    return content.map((t) => <Paragraph color="white" fontSize={16}>{t}<br/></Paragraph>);
-  }
-  if (typeof content === 'string') {
-    const splitArr = content.split(/(\n|\s\s)/);
-    if (splitArr.length > 1) {
-      splitArr.map((t) => <Paragraph color="white" fontSize={16}>{t}</Paragraph>);
-    }
-    return <Paragraph customStyles={{ wordBreak: 'break-all', whiteSpace: 'normal' }} color="white" fontSize={16}>{content}</Paragraph>;
-  }
-  return content;
-}
-
-function getSubtitleFontStyles(size: 'sm' | 'md' | 'lg') {
-  switch (size) {
-    case 'sm':
-      return {
-        fontSize: 24,
-        lineHeight: 1.15,
-        fontWeight: 'normal',
-      };
-    case 'lg':
-      return {
-        fontSize: 40,
-        lineHeight: 1.15,
-        fontWeight: 'normal',
-      };
-    default:
-      return {
-        fontSize: 32,
-        lineHeight: 1.15,
-        fontWeight: 'normal',
-      };
-  }
-}
 
 const Page = (props: StandardPageProps) => {
   const {
