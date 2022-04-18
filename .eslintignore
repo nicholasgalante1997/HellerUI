@@ -4,3 +4,4 @@ __mocks__/
 .github/
 node_modules/
 *.env
+examples
