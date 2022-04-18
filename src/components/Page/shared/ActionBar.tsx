@@ -3,12 +3,12 @@ import { ActionBarProps } from '../types';
 import Container from '../../Container';
 import * as Font from '../../Typography';
 
-const { Heading } = Font;
+const { Heading, Paragraph} = Font;
 
 const ActionBar = (props: ActionBarProps) => {
   const { titleColor, actionTitle, actionContainer } = props;
   const safeHeadingComponent = typeof actionTitle === 'string'
-    ? (<Heading color={titleColor ?? 'white'}>{actionTitle}</Heading>)
+    ? (<Paragraph fontSize={16} thin color={titleColor ?? 'white'}>{actionTitle}</Paragraph>)
     : props.actionTitle;
 
   return (
@@ -17,6 +17,7 @@ const ActionBar = (props: ActionBarProps) => {
       height="1.5rem"
       width="100%"
       customStyles={{
+        display: 'flex',
         flexDirection: 'row',
         justifyContent: actionContainer ? 'space-between' : 'flex-start',
         alignItems: 'center',

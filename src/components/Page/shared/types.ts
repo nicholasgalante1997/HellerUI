@@ -7,9 +7,4 @@ export type NativeHellerSectionProps = {
     justifyContent?: 'center' | 'flex-start';
 };
 
-export type HellerDividerProps = {
-    fadeColor: string;
-    focusColor: string;
-};
-
 export type HellerSectionProps = SafeReactFC<WithCustomStyles<NativeHellerSectionProps>>;

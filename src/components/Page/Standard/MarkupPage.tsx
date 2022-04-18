@@ -1,28 +1,25 @@
 /* eslint-disable no-undef */
 import React from 'react';
-import { NativeMediaTitleProps } from 'src/components/MediaTitle/types';
+import * as Font from '../../Typography';
+import Container from '../../Container';
 import type { StandardPageProps } from '../types';
 import { HellerSection } from '../shared/Section';
-import { HellerDivider, defaultState as dividerDefaultState } from '../shared/Divider';
-import { Break } from '../shared/Break';
+import { HellerDivider, defaultState as dividerDefaultState } from '../../Divider/Divider';
+import { Break } from '../../Break/Break';
 import ActionBar from '../shared/ActionBar';
-import * as Font from '../../Typography';
-import MediaTitle from '../../MediaTitle';
-import { ContentSectionMap } from '../shared/SectionMap';
 
-const { Paragraph } = Font;
+const { Paragraph, Heading } = Font;
 
 function contentEngine(content: string | string[] | string[][] | JSX.Element) {
   if (Array.isArray(content)) {
-    if (Array.isArray(content[0])) return content.map((arr, i) => <ContentSectionMap heading={content[i][i]} text={content[i][i]} color="white" />);
-    return content.map((t) => <Paragraph color="white" fontSize={20}>{t}</Paragraph>);
+    return content.map((t) => <Paragraph color="white" fontSize={16}>{t}<br/></Paragraph>);
   }
   if (typeof content === 'string') {
     const splitArr = content.split(/(\n|\s\s)/);
     if (splitArr.length > 1) {
-      splitArr.map((t) => <Paragraph color="white" fontSize={20}>{t}</Paragraph>);
+      splitArr.map((t) => <Paragraph color="white" fontSize={16}>{t}</Paragraph>);
     }
-    return <Paragraph customStyles={{ wordBreak: 'break-all', whiteSpace: 'normal' }} color="white" fontSize={20}>{content}</Paragraph>;
+    return <Paragraph customStyles={{ wordBreak: 'break-all', whiteSpace: 'normal' }} color="white" fontSize={16}>{content}</Paragraph>;
   }
   return content;
 }
@@ -31,19 +28,19 @@ function getSubtitleFontStyles(size: 'sm' | 'md' | 'lg') {
   switch (size) {
     case 'sm':
       return {
-        fontSize: 12,
+        fontSize: 24,
         lineHeight: 1.15,
         fontWeight: 'normal',
       };
     case 'lg':
       return {
-        fontSize: 28,
+        fontSize: 40,
         lineHeight: 1.15,
         fontWeight: 'normal',
       };
     default:
       return {
-        fontSize: 20,
+        fontSize: 32,
         lineHeight: 1.15,
         fontWeight: 'normal',
       };
@@ -58,13 +55,8 @@ const Page = (props: StandardPageProps) => {
     subtitleColor = 'rgba(270,270,270,0.8)',
     subtitleSize = 'md',
     withActionBar = undefined,
-    withMediaTitle,
     id = 'heller-page-base',
     customStyles = {},
-    gradient,
-    gradientMediaTitle,
-    imageUrl,
-    imageMediaTitle,
     margin,
     padding,
     justifyContent = 'flex-start',
@@ -73,44 +65,8 @@ const Page = (props: StandardPageProps) => {
     content,
   } = props;
 
-  const TitleSection = MediaTitle;
-  const titleSectionProps: NativeMediaTitleProps = {
-    title,
-    titleColor,
-    fullWidth: true,
-    height: '4rem',
-    titleLocation: 'bottom left',
-    headingCustomProps: {
-      as: 'h5',
-      scale: 300,
-    },
-  };
-
+  const TitleSection = Heading;
   const SubTitle = Paragraph;
-
-  if (
-    withMediaTitle
-      && imageMediaTitle
-      && imageUrl
-  ) {
-    titleSectionProps.asImage = true;
-    titleSectionProps.url = imageUrl;
-  }
-
-  if (
-    withMediaTitle
-      && gradientMediaTitle
-      && gradient
-  ) {
-    titleSectionProps.asGradient = true;
-    titleSectionProps.gradient = gradient;
-  }
-
-  if (!withMediaTitle) {
-    titleSectionProps.bgCovenant = {
-      overrideAndDangerouslySetBg: 'inherit',
-    };
-  }
 
   return (
     <HellerSection
@@ -120,14 +76,21 @@ const Page = (props: StandardPageProps) => {
       margin={margin}
       padding={padding}
     >
+      {/* Action Bar */}
       {withActionBar ? (
         <>
           <ActionBar {...withActionBar} />
           <Break />
         </>
       ) : null}
-      <TitleSection {...titleSectionProps} padding={0} />
+
+      {/* Page Title */}
+      <TitleSection as='h1' scale={500} color={titleColor}>{title}</TitleSection>
+
+      {/* Section Title Break */}
       { withDividers ? <HellerDivider {...dividerProps} /> : <Break height="1.5rem" /> }
+      
+      {/* Section Subtitle */}
       { subtitle ? (
         <SubTitle
           customStyles={{
@@ -142,7 +105,22 @@ const Page = (props: StandardPageProps) => {
 
         </SubTitle>
       ) : null }
-      {contentEngine(content)}
+      <Break height='0.5rem' />
+
+      {/* Page Content */}
+      <Container
+        className='heller-content-container'
+        customStyles={{
+          paddingLeft: '0.75rem',
+          paddingRight: '0.75rem',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'flex-start',
+          alignItems: 'flex-start',
+        }}
+      >
+        {contentEngine(content)}
+      </Container>
     </HellerSection>
   );
 };
