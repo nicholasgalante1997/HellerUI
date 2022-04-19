@@ -1,20 +1,26 @@
 import { Properties } from 'csstype';
 
 export type WithCustomStyles<T> = T & {
-    customStyles?: Properties;
+  customStyles?: Properties;
 };
 
 export type Gradient = {
-    to?: string;
-    from?: string;
-    flow?: 'to right' | 'to bottom right' | 'to top right' | 'to left' | 'to top left' | 'to top right';
-    covenant?: GradientCovenant;
+  to?: string;
+  from?: string;
+  flow?:
+    | 'to right'
+    | 'to bottom right'
+    | 'to top right'
+    | 'to left'
+    | 'to top left'
+    | 'to top right';
+  covenant?: GradientCovenant;
 };
 
 export type GradientCovenant = {
-    overrideAndDangerouslySetGradient: string;
+  overrideAndDangerouslySetGradient: string;
 };
 
 export type BgCovenant = {
-    overrideAndDangerouslySetBg: string;
+  overrideAndDangerouslySetBg: string;
 };

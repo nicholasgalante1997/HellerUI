@@ -11,7 +11,7 @@ interface ThemeContextType {
 }
 
 const ThemeContext = createContext<ThemeContextType>({
-  theme: ThemePkgs.twilight,
+  theme: ThemePkgs.twilight
 });
 
 export default ThemeContext;

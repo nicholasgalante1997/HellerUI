@@ -1,9 +1,9 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
-import BasePage from './Markdown/MarkdownPage';
-import { MarkdownPageProps } from './types';
-import { defaultState as dividerDefState } from '../Divider/Divider';
+import BasePage from '../Markdown/MarkdownPage';
+import { MarkdownPageProps } from '../types';
+import { defaultState as dividerDefState } from '../../Divider';
 
 export default {
   title: 'Page Renderer/Markdown Page',
@@ -11,15 +11,19 @@ export default {
   decorators: [
     // eslint-disable-next-line no-shadow
     (Story) => (
-      <div style={{
-        height: '100vh', width: '900px', background: '#000000', margin: '0',
-      }}
+      <div
+        style={{
+          height: '100vh',
+          width: '900px',
+          background: '#000000',
+          margin: '0'
+        }}
       >
         <Story />
       </div>
-    ),
+    )
   ],
-  parameters: {},
+  parameters: {}
 } as Meta;
 
 const markdown = `
@@ -58,7 +62,7 @@ ContentAsString.args = {
   withDividers: true,
   dividerProps: {
     fadeColor: '#000000',
-    focusColor: dividerDefState.focusColor,
+    focusColor: dividerDefState.focusColor
   },
-  content: markdown,
+  content: markdown
 };

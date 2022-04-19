@@ -4,7 +4,7 @@ export const HellerVariant = {
   twilight: 'twilight',
   twilightGradient: 'twilight-gradient',
   roseGarden: 'rose-garden',
-  roseGardenGradient: 'rose-garden-gradient',
+  roseGardenGradient: 'rose-garden-gradient'
 } as const;
 
 export type HellerVariantType = typeof HellerVariant;

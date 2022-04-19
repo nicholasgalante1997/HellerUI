@@ -1,33 +1,33 @@
 .heading.bold {
-    font-family: "Poppins Bold";
-    font-size: 1.25rem;
-    line-height: 1.25;
-    font-weight: bold;
+  font-family: 'Poppins Bold';
+  font-size: 1.25rem;
+  line-height: 1.25;
+  font-weight: bold;
 }
 
 .heading {
-    font-family: "Poppins Medium";
-    font-size: 1.25rem;
-    line-height: 1.25;
-    font-weight: normal;
+  font-family: 'Poppins Medium';
+  font-size: 1.25rem;
+  line-height: 1.25;
+  font-weight: normal;
 }
 
 .paragraph {
-    font-family: "Poppins Regular";
-    font-size: 0.85rem;
-    line-height: 1.25;
-    font-weight: normal;
-    margin: 0;
+  font-family: 'Poppins Regular';
+  font-size: 0.85rem;
+  line-height: 1.25;
+  font-weight: normal;
+  margin: 0;
 }
 
 .thin {
-    font-family: "Poppins Thin";
-    font-size: 0.85rem;
-    line-height: 1.25;
-    font-weight: 200;
-    margin: 0rem;
+  font-family: 'Poppins Thin';
+  font-size: 0.85rem;
+  line-height: 1.25;
+  font-weight: 200;
+  margin: 0rem;
 }
 
 .italic {
-    font-style: italic;
+  font-style: italic;
 }

@@ -1,4 +1,4 @@
 export type HellerDividerProps = {
-    fadeColor: string;
-    focusColor: string;
+  fadeColor: string;
+  focusColor: string;
 };

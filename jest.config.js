@@ -7,4 +7,7 @@ module.exports = {
     '\\.(css|less|scss)$': 'identity-obj-proxy',
   },
   setupFilesAfterEnv: ['<rootDir>/jest-setup.ts'],
+  transformIgnorePatterns: [
+    '(?!(/node_modules/(react-markdown|vfile|vfile-message|unist-.*|unified|bail|is-plain-obj|trough|remark-.*|mdast-util-.*|micromark.*|decode-named-character-reference|character-entities|property-information|hast-util-whitespace|space-separated-tokens|comma-separated-tokens|pretty-bytes)/))(/node_modules/.+.(js|jsx|mjs|cjs|ts|tsx)$)',
+  ],
 };

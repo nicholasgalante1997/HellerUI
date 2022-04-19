@@ -19,7 +19,7 @@ describe('Button', () => {
       backgroundColor: colors.yossarian.sea,
       color: textColor,
       padding: '0.25rem 0.5rem',
-      fontSize: '0.75rem',
+      fontSize: '0.75rem'
     });
   });
 
@@ -30,12 +30,12 @@ describe('Button', () => {
     render(
       <Button color="#1E40AF" backgroundColor="#A78BFA">
         Click me
-      </Button>,
+      </Button>
     );
 
     expect(screen.getByText('Click me')).toHaveStyle({
       backgroundColor: '#A78BFA',
-      color: '#1E40AF',
+      color: '#1E40AF'
     });
   });
 

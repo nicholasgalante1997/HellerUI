@@ -18,6 +18,8 @@
     "clean": "rm -rf lib",
     "lint": "eslint . -c .eslintrc.js",
     "lint:fix": "eslint . -c .eslintrc.js --fix",
+    "prettier:fix": "prettier --write src/",
+    "lint:clean": "yarn lint:fix && yarn prettier:fix",
     "ch-update": "npx changeset",
     "release": "npm run build && npx changeset publish",
     "chromatic": "npx chromatic --project-token=9590c4673854 --auto-accept-changes"
@@ -77,20 +79,19 @@
     "sass": "^1.42.1",
     "sass-loader": "^10.1.1",
     "style-loader": "^2.0.0",
-    "styled-components": "^5.3.5",
     "ts-jest": "^27.0.5",
     "typescript": "^4.4.3"
   },
   "peerDependencies": {
     "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "styled-components": "^5.3.3"
+    "react-dom": "^17.0.2"
   },
   "dependencies": {
     "color-scales": "^3.0.2",
     "react-markdown": "^8.0.2",
     "rehype-raw": "^6.1.1",
     "rehype-sanitize": "^5.0.1",
-    "remark-gfm": "^3.0.1"
+    "remark-gfm": "^3.0.1",
+    "styled-components": "^5.3.3"
   }
 }

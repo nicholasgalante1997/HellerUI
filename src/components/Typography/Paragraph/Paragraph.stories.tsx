@@ -10,8 +10,8 @@ export default {
   component: Paragraph,
   argTypes: {},
   parameters: {
-    componentSubtitle: 'a subsection of Typography for regular paragraph text.',
-  },
+    componentSubtitle: 'a subsection of Typography for regular paragraph text.'
+  }
 } as Meta;
 
 const Template: Story<ParagraphProps> = (args) => (
@@ -24,5 +24,5 @@ Default.args = {
   color: 'violet',
   bold: false,
   italic: false,
-  thin: false,
+  thin: false
 };

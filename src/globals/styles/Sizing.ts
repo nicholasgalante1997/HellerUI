@@ -6,7 +6,7 @@ export const HellerSize = {
   rg: 'regular',
   lg: 'large',
   xl: 'extra-large',
-  bb: 'biggest-boy',
+  bb: 'biggest-boy'
 } as const;
 
 export type HellerSizeType = typeof HellerSize;

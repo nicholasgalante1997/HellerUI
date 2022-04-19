@@ -7,26 +7,26 @@ import { Heading } from '../Typography';
 
 const headingDefaultStyles: Properties = {
   margin: '0.15rem',
-  padding: '0px',
+  padding: '0px'
 };
 
 export const locationDict = {
   'bottom left': {
     justifyContent: 'end',
-    alignItems: 'start',
+    alignItems: 'start'
   },
   'bottom right': {
     justifyContent: 'end',
-    alignItems: 'end',
+    alignItems: 'end'
   },
   'top left': {
     justifyContent: 'start',
-    alignItems: 'start',
+    alignItems: 'start'
   },
   'top right': {
     justifyContent: 'start',
-    alignItems: 'end',
-  },
+    alignItems: 'end'
+  }
 };
 
 const MediaTitle = (props: MediaTitleProps) => {
@@ -45,24 +45,28 @@ const MediaTitle = (props: MediaTitleProps) => {
     url,
     fullWidth = false,
     height = null,
-    width = null,
+    width = null
   } = props;
 
   const nativeStyles: Properties = {
     padding: getPadding(padding),
     ...locationDict[titleLocation],
-    ...customStyles,
+    ...customStyles
   };
 
-  if (height) nativeStyles.height = typeof height === 'string' ? height : `${height}px`;
+  if (height)
+    nativeStyles.height = typeof height === 'string' ? height : `${height}px`;
 
-  if (width) nativeStyles.width = typeof width === 'string' ? width : `${width}px`;
+  if (width)
+    nativeStyles.width = typeof width === 'string' ? width : `${width}px`;
 
   if (fullWidth) nativeStyles.width = '100%';
 
   if (asGradient) {
     if (!gradient) {
-      console.warn('<MediaTitle /> Gradient Issue: Cannot implement gradient w/o a gradient prop.');
+      console.warn(
+        '<MediaTitle /> Gradient Issue: Cannot implement gradient w/o a gradient prop.'
+      );
       console.warn('<MediaTitle /> gradient: ', JSON.stringify(gradient));
     } else {
       return (

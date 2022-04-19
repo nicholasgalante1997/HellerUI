@@ -43,7 +43,7 @@ export const Button: React.FC<ButtonProps> = ({
   className = null,
   height,
   width,
-  fullWidth = false,
+  fullWidth = false
 }) => {
   const [active, setActive] = React.useState(false);
   const onMouseEnter = () => setActive(true);
@@ -125,7 +125,7 @@ export const Button: React.FC<ButtonProps> = ({
     padding,
     fontSize,
     minHeight,
-    minWidth,
+    minWidth
   };
 
   if (height) Object.assign(buttonStyles, { height });

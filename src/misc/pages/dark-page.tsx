@@ -4,7 +4,11 @@ import '../../themes/dark.css';
 import '../../themes/pinched.css';
 import '../../themes/font.css';
 
-const spanStyle = { marginLeft: '8px', fontSize: '8px', color: 'rgba(270,270,270,0.6)' };
+const spanStyle = {
+  marginLeft: '8px',
+  fontSize: '8px',
+  color: 'rgba(270,270,270,0.6)'
+};
 
 const Page = () => (
   <section>

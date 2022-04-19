@@ -4,9 +4,7 @@
 import { Properties } from 'csstype';
 import React from 'react';
 import type { ContainerProps } from './types';
-import {
-  GridProvider, useGridContext, defaultContext,
-} from './GridContext';
+import { GridProvider, useGridContext, defaultContext } from './GridContext';
 
 const Container = (props: ContainerProps) => {
   const {
@@ -29,20 +27,24 @@ const Container = (props: ContainerProps) => {
     className = 'heller-container-cl',
     onClick = null,
     onMouseEnter = null,
-    onMouseLeave = null,
+    onMouseLeave = null
   } = props;
 
-  const backgroundStyles: Pick<Properties,
-    'backgroundImage' |
-    'background' |
-    'backgroundColor' |
-    'objectFit' |
-    'objectPosition' |
-    'backgroundRepeat' |
-    'backgroundBlendMode' |
-    'backgroundSize'> = background ? {
-      background,
-    } : {};
+  const backgroundStyles: Pick<
+    Properties,
+    | 'backgroundImage'
+    | 'background'
+    | 'backgroundColor'
+    | 'objectFit'
+    | 'objectPosition'
+    | 'backgroundRepeat'
+    | 'backgroundBlendMode'
+    | 'backgroundSize'
+  > = background
+    ? {
+        background
+      }
+    : {};
 
   if (image) {
     backgroundStyles.backgroundImage = `url(${image})`;
@@ -52,30 +54,41 @@ const Container = (props: ContainerProps) => {
   }
 
   if (gradient) {
-    if (gradient.covenant) backgroundStyles.background = gradient.covenant.overrideAndDangerouslySetGradient;
-    else backgroundStyles.background = `linear-gradient(${gradient.flow ?? 'to right'}, ${gradient?.from}, ${gradient?.to})`;
+    if (gradient.covenant)
+      backgroundStyles.background =
+        gradient.covenant.overrideAndDangerouslySetGradient;
+    else
+      backgroundStyles.background = `linear-gradient(${
+        gradient.flow ?? 'to right'
+      }, ${gradient?.from}, ${gradient?.to})`;
   }
 
   const nativeStyles: Properties = {
     // eslint-disable-next-line no-nested-ternary
-    borderRadius: radius === 'rounded' ? '6px' : radius === 'normal' ? '2px' : '0px',
+    borderRadius:
+      radius === 'rounded' ? '6px' : radius === 'normal' ? '2px' : '0px',
     overflow: 'hidden',
     padding,
     margin,
     display: 'flex',
     flexWrap: 'wrap',
     flexDirection: asGridParent ? 'row' : 'column',
-    ...backgroundStyles,
+    ...backgroundStyles
   };
 
   if (opacity) {
-    if (opacity > 100 || opacity < 0) console.warn('<Container> Issue Present: Opacity must be between 0 and 100');
+    if (opacity > 100 || opacity < 0)
+      console.warn(
+        '<Container> Issue Present: Opacity must be between 0 and 100'
+      );
     else nativeStyles.opacity = `${opacity}%`;
   }
 
-  if (height) nativeStyles.height = typeof height === 'string' ? height : `${height}px`;
+  if (height)
+    nativeStyles.height = typeof height === 'string' ? height : `${height}px`;
 
-  if (width) nativeStyles.width = typeof width === 'string' ? width : `${width}px`;
+  if (width)
+    nativeStyles.width = typeof width === 'string' ? width : `${width}px`;
 
   // container as grid
   if (asGridParent) {
@@ -103,7 +116,9 @@ const Container = (props: ContainerProps) => {
   if (asGridChild) {
     const { rows } = useGridContext();
     if (rows < 12 && colSpan > 6) {
-      console.warn('<Container/> Grid Child Issue: Grid Column Child has greater colspan than parent grid container. aborting grid schema.');
+      console.warn(
+        '<Container/> Grid Child Issue: Grid Column Child has greater colspan than parent grid container. aborting grid schema.'
+      );
     } else {
       nativeStyles.width = `${Math.floor((colSpan / rows) * 100).toString()}%`;
       nativeStyles.margin = '4px 0px 0px 4px';

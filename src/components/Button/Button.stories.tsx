@@ -1,9 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
-import {
-  Button, ButtonProps,
-} from './Button';
+import { Button, ButtonProps } from './Button';
 import colors from '../../globals/styles/colors';
 
 /*
@@ -19,12 +17,12 @@ export default {
   component: Button,
   parameters: {
     componentSubtitle:
-      'A general purpose button, see below for available props for this token.',
+      'A general purpose button, see below for available props for this token.'
   },
   argTypes: {
     backgroundColor: { control: 'color' },
-    color: { control: 'color' },
-  },
+    color: { control: 'color' }
+  }
 } as Meta;
 
 // 👇 We create a “template” of how args map to rendering
@@ -56,13 +54,13 @@ export const Sizes = (args: any) => (
   </div>
 );
 Sizes.args = {
-  backgroundColor: colors.mcwatt.flickrPink,
+  backgroundColor: colors.mcwatt.flickrPink
 };
 Sizes.parameters = {
   docs: {
     storyDescription:
-      'There are 6 accepted sizes, ranging from xs - bb respectively. The default size setting is medium or (rg). It is recommended that if you are going to customize the size, you import ButtonSize alongside Button to preserve padding `XS (ButtonSize.xs), Sm (ButtonSize.sm), Med (ButtonSize.rg), Lg (ButtonSize.lg), XL (ButtonSize.xl) Biggest (ButtonSize.bb)`',
-  },
+      'There are 6 accepted sizes, ranging from xs - bb respectively. The default size setting is medium or (rg). It is recommended that if you are going to customize the size, you import ButtonSize alongside Button to preserve padding `XS (ButtonSize.xs), Sm (ButtonSize.sm), Med (ButtonSize.rg), Lg (ButtonSize.lg), XL (ButtonSize.xl) Biggest (ButtonSize.bb)`'
+  }
 };
 
 export const Gradient = Template.bind({});
@@ -71,23 +69,23 @@ Gradient.args = {
   gradient: {
     to: 'pink',
     from: 'indigo',
-    flow: 'to bottom right',
+    flow: 'to bottom right'
   },
-  size: 'lg',
+  size: 'lg'
 };
 
 export const CustomBackground = Template.bind({});
 CustomBackground.args = {
-  backgroundColor: '#A78BFA',
+  backgroundColor: '#A78BFA'
 };
 
 export const CustomFontColor = Template.bind({});
 CustomFontColor.args = {
-  color: 'gold',
+  color: 'gold'
 };
 
 export const OnClick = Template.bind({});
 OnClick.args = {
   // eslint-disable-next-line no-alert
-  onClick: () => alert('Clicked the button!'),
+  onClick: () => alert('Clicked the button!')
 };

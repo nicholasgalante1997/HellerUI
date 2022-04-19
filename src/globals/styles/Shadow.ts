@@ -1,7 +1,7 @@
 export const ShadowStyles = {
   sharp: 'sharp',
   blur: 'blur',
-  ghost: 'ghost',
+  ghost: 'ghost'
 } as const;
 
 export const baseShadowHex = 'rgba(0, 0, 0, 0.8)';

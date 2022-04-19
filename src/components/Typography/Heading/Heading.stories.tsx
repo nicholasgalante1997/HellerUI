@@ -10,14 +10,16 @@ export default {
   component: Heading,
   argTypes: {},
   parameters: {
-    componentSubtitle: 'a subsection of Typography for title displays.',
-  },
+    componentSubtitle: 'a subsection of Typography for title displays.'
+  }
 } as Meta;
 
-const Template: Story<HeadingProps> = (args) => <Heading {...args}>Seymour Skinner</Heading>;
+const Template: Story<HeadingProps> = (args) => (
+  <Heading {...args}>Seymour Skinner</Heading>
+);
 
 export const Default = Template.bind({});
 Default.args = {
   as: 'h2',
-  color: 'violet',
+  color: 'violet'
 };

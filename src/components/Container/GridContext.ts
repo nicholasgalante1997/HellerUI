@@ -7,7 +7,7 @@ const getDefaultContext = () => {
 };
 
 export const defaultContext = {
-  rows: getDefaultContext(),
+  rows: getDefaultContext()
 };
 
 const GridContext = React.createContext(defaultContext);
