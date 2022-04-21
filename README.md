@@ -6,7 +6,7 @@
 
 ![Hi Everybody!](https://c.tenor.com/ny2kroyiSI4AAAAC/hi-everybody-simpsons.gif)
 
-I hope you are having a great night! As i should have mentioned much earlier, this react component library/ui-kit is very much so a work in progress! Moving forward, all versions until _release_ will be versioned under 1.0.0. That means that the most up to date version at the time of writing is 0.0.24! If you are on that version, you are killing it!
+I hope you are having a great night! As i should have mentioned much earlier, this react component library/ui-kit is very much so a work in progress! Moving forward, all versions until _release_ will be versioned under 1.0.0. That means that the most up to date version at the time of writing is 0.0.25! If you are on that version, you are killing it!
 
 If you'd like to leave feedback about the package, please feel free to raise an issue on our github!
 
@@ -22,13 +22,16 @@ Right now components that are available for consumption are:
 
 ## Installation
 
+> heller ui relies on styled-components for runtime style injection as well as react-markdown, and several markdown plugins to create the markdown renderer page component. In totality, the installation of the below packages results in an addition of less than 2 mb to your package. If size is everything to you, and motion means nothing, then we have current works in development to allow for the consumption of this package as a remotely hosted collection of federated modules. Stay tuned for updated on how to use hellerui with module federation.
+
+
 To get started, run
 
-`npm install @nickgdev/hellerui`
+`npm install @nickgdev/hellerui styled-components react-markdown remark-gfm rehype-raw rehype-sanitize`
 
 or
 
-`yarn add @nickgdev/hellerui`
+`yarn add @nickgdev/hellerui styled-components react-markdown remark-gfm rehype-raw rehype-sanitize`
 
 ### Example Usage
 

@@ -1385,10 +1385,10 @@
   resolved "https://registry.yarnpkg.com/@leichtgewicht/ip-codec/-/ip-codec-2.0.3.tgz#0300943770e04231041a51bd39f0439b5c7ab4f0"
   integrity sha512-nkalE/f1RvRGChwBnEIoBfSEYOXnCRdleKuv6+lePbMDrMZXeDQnqak5XDOeBgrPPyPfAdcCu/B5z+v3VhplGg==
 
-"@nickgdev/hellerui@^0.0.23":
-  version "0.0.23"
-  resolved "https://registry.yarnpkg.com/@nickgdev/hellerui/-/hellerui-0.0.23.tgz#b2ea685fa376d02a6fb8aab95591f8d5c1b13f75"
-  integrity sha512-8Q457PZ1UAu7ZT4YGRc+zWJtcdmuM0tXo/S8mZt3RLGTMlp7k0vH0gFY/tUNEm9CunYjNeBAW/jCzYwTAU/7RQ==
+"@nickgdev/hellerui@^0.0.24":
+  version "0.0.24"
+  resolved "https://registry.yarnpkg.com/@nickgdev/hellerui/-/hellerui-0.0.24.tgz#792e41f41bf6c1a50df08cee61c824ea99ebcb8b"
+  integrity sha512-9P9ykTb8ary3N9aYy6sIi8ZQd6WVVXxK6Takxs0VjNWb+0PY3UYP9HHo6VzWHcgYRbSqTNTfUH0Wv98zvgjUCw==
   dependencies:
     color-scales "^3.0.2"
     react-markdown "^8.0.2"

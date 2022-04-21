@@ -50,7 +50,7 @@ export default {
     visualizer({
       title: 'heller-ui dep graph',
       filename: 'stats/heller-ui-dep-stats.html',
-      open: true,
+      open: false,
       template: 'sunburst',
     }),
   ],
