@@ -1,4 +1,3 @@
-// eslint-disable-next-line import/prefer-default-export
 export function getSubtitleFontStyles(size: 'sm' | 'md' | 'lg') {
   switch (size) {
     case 'sm':

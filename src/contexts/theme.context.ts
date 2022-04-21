@@ -1,5 +1,3 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable no-shadow */
 import React, { createContext } from 'react';
 
 export enum ThemePkgs {

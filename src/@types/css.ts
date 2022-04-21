@@ -13,7 +13,9 @@ export type Gradient = {
     | 'to top right'
     | 'to left'
     | 'to top left'
-    | 'to top right';
+    | 'to top right'
+    | 'to bottom left';
+
   covenant?: GradientCovenant;
 };
 

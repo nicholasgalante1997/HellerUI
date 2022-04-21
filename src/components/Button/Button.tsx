@@ -1,5 +1,3 @@
-/* eslint-disable react/require-default-props */
-/* eslint-disable no-unused-vars */
 import React from 'react';
 import CSS from 'csstype';
 import ColorScale from 'color-scales';

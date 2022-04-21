@@ -1,4 +1,3 @@
-/* eslint-disable import/prefer-default-export */
 const scaleObject = {
   0: '0rem',
   1: '0.5rem',

@@ -1,6 +1,6 @@
 {
   "name": "@nickgdev/hellerui",
-  "version": "0.0.22",
+  "version": "0.0.23",
   "description": "",
   "main": "lib/index.js",
   "module": "lib/index.esm.js",
@@ -16,10 +16,7 @@
     "build-storybook": "build-storybook",
     "build": "rollup -c",
     "clean": "rm -rf lib",
-    "lint": "eslint . -c .eslintrc.js",
-    "lint:fix": "eslint . -c .eslintrc.js --fix",
     "prettier:fix": "prettier --write src/",
-    "lint:clean": "yarn lint:fix && yarn prettier:fix",
     "ch-update": "npx changeset",
     "release": "npm run build && npx changeset publish",
     "chromatic": "npx chromatic --project-token=9590c4673854 --auto-accept-changes"

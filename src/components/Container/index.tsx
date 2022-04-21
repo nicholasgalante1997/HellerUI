@@ -1,6 +1,3 @@
-/* eslint-disable max-len */
-/* eslint-disable jsx-a11y/no-static-element-interactions */
-/* eslint-disable jsx-a11y/click-events-have-key-events */
 import { Properties } from 'csstype';
 import React from 'react';
 import type { ContainerProps } from './types';
@@ -64,7 +61,6 @@ const Container = (props: ContainerProps) => {
   }
 
   const nativeStyles: Properties = {
-    // eslint-disable-next-line no-nested-ternary
     borderRadius:
       radius === 'rounded' ? '6px' : radius === 'normal' ? '2px' : '0px',
     overflow: 'hidden',

@@ -1,5 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies */
-/* eslint-disable no-undef */
 import * as React from 'react';
 import { render, fireEvent, screen } from '@testing-library/react';
 import { Button } from './Button';

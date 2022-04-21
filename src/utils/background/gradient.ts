@@ -1,4 +1,3 @@
-/* eslint-disable import/prefer-default-export */
 import { Gradient } from 'src/@types';
 
 export function formatGradient(gradient: Gradient) {

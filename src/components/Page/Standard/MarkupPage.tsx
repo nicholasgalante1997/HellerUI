@@ -7,7 +7,7 @@ import { HellerSection } from '../shared/Section';
 import PageHeading from '../shared/PageHeading';
 import { contentEngine } from '../utils/contentEngine';
 import { defaultState as dividerDefaultState } from '../../Divider';
-import { hellerThemeOptions, defaultColor } from '../index';
+import { hellerThemeOptions, defaultColor } from '../defaults';
 
 const Page = (props: StandardPageProps) => {
   const {

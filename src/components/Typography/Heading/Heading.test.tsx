@@ -1,6 +1,3 @@
-/* eslint-disable no-restricted-syntax */
-/* eslint-disable no-undef */
-/* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
 import { render } from '@testing-library/react';
 import Heading from './Heading';

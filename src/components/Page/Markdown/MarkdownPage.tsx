@@ -18,7 +18,7 @@ import {
   defaultState as dividerDefaultState
 } from '../../Divider/Divider';
 import { Break } from '../../Break/Break';
-import { defaultColor, hellerThemeOptions } from '..';
+import { defaultColor, hellerThemeOptions } from '../defaults';
 
 const { Paragraph, Heading } = Font;
 

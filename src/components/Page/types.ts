@@ -1,5 +1,3 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable no-undef */
 import React, { ComponentType } from 'react';
 import { SafeReactFC, WithCustomStyles } from 'src/@types';
 import { HellerDividerProps } from '../Divider';

@@ -1,4 +1,3 @@
-/* eslint-disable quote-props */
 import * as StyledHeading from './Styles';
 
 const StyledHeadingDict = {

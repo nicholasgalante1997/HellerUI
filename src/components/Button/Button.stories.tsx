@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
 import { Button, ButtonProps } from './Button';
@@ -86,6 +85,5 @@ CustomFontColor.args = {
 
 export const OnClick = Template.bind({});
 OnClick.args = {
-  // eslint-disable-next-line no-alert
   onClick: () => alert('Clicked the button!')
 };

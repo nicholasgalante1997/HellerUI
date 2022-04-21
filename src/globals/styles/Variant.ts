@@ -1,5 +1,3 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable no-shadow */
 export const HellerVariant = {
   twilight: 'twilight',
   twilightGradient: 'twilight-gradient',
