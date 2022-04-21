@@ -36,9 +36,7 @@ export default {
         'index.css',
       ],
     }),
-    resolve({
-      preferBuiltins: false,
-    }),
+    resolve(),
     commonjs(),
     typescript({
       tsconfigOverride: {

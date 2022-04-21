@@ -6,7 +6,7 @@
 
 ![Hi Everybody!](https://c.tenor.com/ny2kroyiSI4AAAAC/hi-everybody-simpsons.gif)
 
-I hope you are having a great night! As i should have mentioned much earlier, this react component library/ui-kit is very much so a work in progress! Moving forward, all versions until _release_ will be versioned under 1.0.0. That means that the most up to date version at the time of writing is 0.0.23! If you are on that version, you are killing it!
+I hope you are having a great night! As i should have mentioned much earlier, this react component library/ui-kit is very much so a work in progress! Moving forward, all versions until _release_ will be versioned under 1.0.0. That means that the most up to date version at the time of writing is 0.0.24! If you are on that version, you are killing it!
 
 If you'd like to leave feedback about the package, please feel free to raise an issue on our github!
 
