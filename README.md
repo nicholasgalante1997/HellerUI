@@ -91,7 +91,7 @@ app.appendChild(divider);
 app.appendChild(paragraph);
 ```
 
-[view in sb](https://615213bb7c9f60003aa5ec0d-zfgscvhzxt.chromatic.com/?path=/docs/themed-css-dark-page--dark-page)
+[view in sb](https://615213bb7c9f60003aa5ec0d-lubdcimfjc.chromatic.com/?path=/docs/themed-css-dark-page--dark-page)
 
 ### Heller UI Storybook is open access on Chromatic now!
 
@@ -101,4 +101,4 @@ _Is this package something **I** want to install?_
 
 Well now you can fiddle around with our SB instance and see if it fits your use case.
 
-[hellerui](https://615213bb7c9f60003aa5ec0d-zfgscvhzxt.chromatic.com/?path=/story/button--default)
+[hellerui](https://615213bb7c9f60003aa5ec0d-lubdcimfjc.chromatic.com/?path=/story/button--default)
