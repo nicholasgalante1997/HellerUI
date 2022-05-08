@@ -20,26 +20,31 @@ Right now components that are available for consumption are:
 - Markdown Page
 - themed-css\*
 
-## Installation
+##### Installation
 
 > heller ui relies on styled-components for runtime style injection as well as react-markdown, and several markdown plugins to create the markdown renderer page component. In totality, the installation of the below packages results in an addition of less than 2 mb to your package. If size is everything to you, and motion means nothing, then we have current works in development to allow for the consumption of this package as a remotely hosted collection of federated modules. Stay tuned for updated on how to use hellerui with module federation.
 
 
 To get started, run
 
-`npm install @nickgdev/hellerui styled-components react-markdown remark-gfm rehype-raw rehype-sanitize`
+```npx
+npm install @nickgdev/hellerui styled-components react-markdown remark-gfm rehype-raw rehype-sanitize
+```
 
 or
 
-`yarn add @nickgdev/hellerui styled-components react-markdown remark-gfm rehype-raw rehype-sanitize`
+```yarn
+yarn add @nickgdev/hellerui styled-components react-markdown remark-gfm rehype-raw rehype-sanitize
+```
 
-### Example Usage
+---
+##### Example Usage
 
 ```typescript
 
 import React from 'react';
 import { Typography } from '@nickgdev/hellerui';
-import '@nickgdev/hellerui/index.css'
+import '@nickgdev/hellerui/lib/index.css'
 
 const { Heading, Paragraph } = Typography;
 
@@ -54,44 +59,23 @@ const MyPage = () => {
 
 ```
 
-### themed-css
+---
+##### heller as a templated page engine
 
-heller ui wants to be the go to choice for spinning up a quick markup/markdown website and not compromising on style. To that extent, we don't want to limit you to using us solely within a react environment. As it stands right now, spinning up a basic cra app from the cli creates a project with some 4000 odd dependencies. Its a lot. Definitely doesn't fit every use case. We've begun creating isolated, opinionated style tokens as css stylesheets available for you to consume within your js project. This is highly experimental right now.
+This is lo and behold the best thing that heller offers (my opinion). We've wanted to create a component that could allow for the rapid development of content driven websites,
+like docs sites or blog sites. We offer to you, the Heller Page. Right now it has two implementations, one that accepts text/jsx as content, and one that accepts markdown as content. I could tell you why the pages are awesome, but its better to show you! 
 
-Ideally its for when you want to leverage hellerui styles/fonts without tying yourself to an individual framework. With the advance of module federation and teams being able to create isolated autonomous microfrontends, we can explore the benefits of other frameworks while keeping consistent styles, which is paramount to good ux.
+> Below is an image of a Heller Page being used as a markdown engine, and we've also included the code so you can see just how easy it is to use/implement
 
-Live examples of heller themed-css are quick to follow and will be posted in the readme when available. If youre an eager beaver, just install the package and tinker around yourself with it.
+![Heller Markdown Page](/lib/assets/md-page.png)
+![Heller Markdown Page](/src/assets/md-page.png)
+![Heller Markdown Page](/assets/md-page.png)
 
-example
+![Heller Markdown Page](/lib/assets/md-page-code.png)
+![Heller Markdown Page](/src/assets/md-page-code.png)
+![Heller Markdown Page](/assets/md-page-code.png)
 
-```jsx
-import '@nickgdev/hellerui/lib/index.css';
-import '@nickgdev/hellerui/lib/themes/dark.css';
-import '@nickgdev/hellerui/lib/themes/pinched.css';
-import '@nickgdev/hellerui/lib/themes/font.css';
-
-const app = document.getElementById('app');
-
-const heading = document.createElement('h1');
-heading.setAttribute('class', 'heading');
-heading.textContent = 'hellerui';
-
-const divider = document.createElement('hr');
-divider.setAttribute(
-  'style',
-  'margin-left:0px;margin-bottom:0.75rem;width:25%;color:white;align-self:start;'
-);
-
-const paragraph = document.createElement('p');
-paragraph.setAttribute('class', 'paragraph');
-paragraph.textContent = 'a design system that wants to live!';
-
-app.appendChild(heading);
-app.appendChild(divider);
-app.appendChild(paragraph);
-```
-
-[view in sb](https://615213bb7c9f60003aa5ec0d-lubdcimfjc.chromatic.com/?path=/docs/themed-css-dark-page--dark-page)
+---
 
 ### Heller UI Storybook is open access on Chromatic now!
 
@@ -101,4 +85,4 @@ _Is this package something **I** want to install?_
 
 Well now you can fiddle around with our SB instance and see if it fits your use case.
 
-[hellerui](https://615213bb7c9f60003aa5ec0d-lubdcimfjc.chromatic.com/?path=/story/button--default)
+[hellerui](https://615213bb7c9f60003aa5ec0d-kzmwhjocta.chromatic.com/?path=/story/button--default)

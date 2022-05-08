@@ -47,7 +47,7 @@ export const H5 = styled.h5<StyledHeaderProps>`
 `;
 
 export const H6 = styled.h6<StyledHeaderProps>`
-  color: ${(props: StyledHeaderProps) => (props.color ? props.color : 'black')};
+  color: ${(props: StyledHeaderProps) => props.color ? props.color : 'black'};
   font-family: 'Poppins Bold';
   font-size: 1rem;
   font-weight: ${(props) => props.scale};

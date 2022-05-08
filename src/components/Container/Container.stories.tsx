@@ -96,8 +96,29 @@ Image.args = {
 };
 
 export const Grid = () => (
-  <Container asGridParent>
-    <Container height={100} asGridChild colSpan={4} background="purple" />
-    <Container height={100} asGridChild colSpan={8} background="pink" />
+  <Container>
+
+    <Container asGridParent>
+      <Container height={100} asGridChild colSpan={10} background="purple" radius='rounded'/>
+      <Container height={100} asGridChild colSpan={2} background="pink" radius='rounded' />
+    </Container>
+    
+    <Container asGridParent>
+      <Container height={100} asGridChild colSpan={4} background="purple" radius='rounded'/>
+      <Container height={100} asGridChild colSpan={8} background="pink" radius='rounded' />
+    </Container>
+
+    <Container asGridParent>
+      <Container height={100} asGridChild colSpan={4} background="purple" />
+      <Container height={100} asGridChild colSpan={4} background="pink" />
+      <Container height={100} asGridChild colSpan={4} background="indigo" />
+    </Container>
+
+    <Container asGridParent>
+      <Container height={100} asGridChild colSpan={3} background="purple" />
+      <Container height={100} asGridChild colSpan={3} background="pink" />
+      <Container height={100} asGridChild colSpan={3} background="indigo" />
+      <Container height={100} asGridChild colSpan={3} background="pink" />
+    </Container>
   </Container>
 );

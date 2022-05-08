@@ -1,0 +1,9 @@
+node_modules
+build
+lib
+stats 
+.changeset
+.storybook
+.github/**/*
+npm-pack 
+__mocks__

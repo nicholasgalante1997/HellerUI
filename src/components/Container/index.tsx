@@ -91,6 +91,7 @@ const Container = (props: ContainerProps) => {
     nativeStyles.width = '100%';
     nativeStyles.margin = '-4px 0px 0px -4px';
     nativeStyles.boxSizing = 'border-box';
+    nativeStyles.flexWrap = 'nowrap';
     return (
       <GridProvider value={defaultContext}>
         <div

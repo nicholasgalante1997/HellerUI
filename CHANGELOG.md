@@ -2,3 +2,4 @@
 0.0.20 Soft launched media & container 
 0.0.21 themed-css soft launch of singular style tokens
 0.0.22 Button revisions with hover
+0.0.31 Page improvements, container improvements, docs updated
