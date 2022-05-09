@@ -64,5 +64,12 @@ ContentAsString.args = {
     fadeColor: '#000000',
     focusColor: dividerDefState.focusColor
   },
-  content: markdown
+  content: markdown,
+  dangerouslyOverrideInnerContentStyles: {
+    styles: {
+      maxWidth: '600px',
+      justifySelf: 'center',
+      alignSelf: 'center'
+    }
+  }
 };

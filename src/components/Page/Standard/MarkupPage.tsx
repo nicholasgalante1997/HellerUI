@@ -27,7 +27,8 @@ const Page = (props: StandardPageProps) => {
     dividerProps = dividerDefaultState,
     content,
     contentTextColor = defaultColor,
-    theme = 'none'
+    theme = 'none',
+    dangerouslyOverrideInnerContentStyles,
   } = props;
 
   let mainThemeColor: string | null = null;
@@ -70,7 +71,8 @@ const Page = (props: StandardPageProps) => {
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'flex-start',
-          alignItems: 'flex-start'
+          alignItems: 'flex-start',
+          ...(dangerouslyOverrideInnerContentStyles ? dangerouslyOverrideInnerContentStyles.styles : {})
         }}
       >
         {contentEngine(

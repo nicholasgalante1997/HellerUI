@@ -1,3 +1,4 @@
+import { Properties } from 'csstype';
 import React, { ComponentType } from 'react';
 import { SafeReactFC, WithCustomStyles } from 'src/@types';
 import { HellerDividerProps } from '../Divider';
@@ -53,7 +54,12 @@ export type BasePage<T> = T & {
   dividerProps?: HellerDividerProps;
   contentEngine?: 'normal' | 'markdown';
   theme?: HellerPageTheme;
+  dangerouslyOverrideInnerContentStyles?: PageStyleCovenant;
 } & NativeHellerSectionProps;
+
+type PageStyleCovenant = {
+  styles: Pick<Properties, 'width' | 'minWidth' | 'maxWidth' | 'height' | 'minHeight' | 'maxHeight' | 'textAlign' | 'font' | 'alignSelf' | 'alignItems' | 'alignContent' | 'justifyContent' | 'justifyItems' | 'justifySelf' >;
+};
 
 export type MarkdownCustomComponentProps = {
   node: Element;

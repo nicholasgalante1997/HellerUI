@@ -41,7 +41,8 @@ const Page = (props: MarkdownPageProps) => {
     customComponentMap = {},
     content,
     contentTextColor = defaultColor,
-    theme = 'none'
+    theme = 'none',
+    dangerouslyOverrideInnerContentStyles
   } = props;
 
   let mainThemeColor: string | null = null;
@@ -85,7 +86,8 @@ const Page = (props: MarkdownPageProps) => {
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'flex-start',
-          alignItems: 'flex-start'
+          alignItems: 'flex-start',
+          ...(dangerouslyOverrideInnerContentStyles ? dangerouslyOverrideInnerContentStyles.styles : {})
         }}
       >
         <ReactMarkdown
