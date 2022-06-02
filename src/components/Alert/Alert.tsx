@@ -8,14 +8,12 @@ import Container from '../Container';
 import { Paragraph } from '../Typography';
 import '../../index.css';
 
-// remove comments before pushing to master you idiot
-
 export const DarkAlertVariantDict = {
   info: '#08324A',
   error: '#500202',
   warning: '#503502',
   success: '0B471E'
-};
+} as const;
 
 export const AlertVariantDict = {
   info: '#BEE3F8',
@@ -32,8 +30,7 @@ export const Alert = (props: AlertProps) => {
     title,
     isVisible,
     onClose,
-    customStyles,
-    maxLines = 2
+    customStyles
   } = props;
 
   const colorPalette = new ColorScale(0, 100, [
@@ -45,7 +42,6 @@ export const Alert = (props: AlertProps) => {
     //Parent row container
     <Container
       asGridParent
-      width="fit-content"
       background={AlertVariantDict[variant]}
       radius="rounded"
       padding="0px"
@@ -57,7 +53,7 @@ export const Alert = (props: AlertProps) => {
       className={className}
       id={id}
     >
-      {/*10 columns of one single row  */}
+      {/*11 columns of one single row  */}
       <Container
         dataTestId="alert-text-container"
         asGridChild

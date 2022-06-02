@@ -7,7 +7,6 @@ export interface NativeAlertProps {
   title: string;
   isVisible: boolean;
   onClose: () => void;
-  maxLines?: number;
 }
 
 export type AlertProps = WithCustomStyles<NativeAlertProps>;
