@@ -1,8 +1,6 @@
 import React from 'react';
 
 const getDefaultContext = () => {
-  if (typeof window === 'undefined') return 12;
-  if (window && window.screen.width < 480) return 6;
   return 12;
 };
 

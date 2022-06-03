@@ -24,7 +24,8 @@ const Container = (props: ContainerProps) => {
     className = 'heller-container-cl',
     onClick = null,
     onMouseEnter = null,
-    onMouseLeave = null
+    onMouseLeave = null,
+    dataTestId = 'container'
   } = props;
 
   const backgroundStyles: Pick<
@@ -128,7 +129,7 @@ const Container = (props: ContainerProps) => {
       style={{ ...nativeStyles, ...customStyles }}
       className={className}
       id={id}
-      data-testid="container"
+      data-testid={dataTestId}
       aria-label={ariaLabel ?? undefined}
       onClick={onClick ?? undefined}
       onMouseEnter={onMouseEnter ?? undefined}

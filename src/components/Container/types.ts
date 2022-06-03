@@ -17,6 +17,7 @@ export type NativeContainerProps = {
   onClick?: React.MouseEventHandler<HTMLDivElement>;
   onMouseEnter?: React.MouseEventHandler<HTMLDivElement>;
   onMouseLeave?: React.MouseEventHandler<HTMLDivElement>;
+  dataTestId?: string;
 } & Partial<Pick<HTMLDivElement, 'id' | 'className' | 'ariaLabel'>>;
 
 export type ContainerProps = SafeReactFC<
