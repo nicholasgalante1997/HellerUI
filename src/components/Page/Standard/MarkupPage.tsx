@@ -28,7 +28,7 @@ const Page = (props: StandardPageProps) => {
     content,
     contentTextColor = defaultColor,
     theme = 'none',
-    dangerouslyOverrideInnerContentStyles,
+    dangerouslyOverrideInnerContentStyles
   } = props;
 
   let mainThemeColor: string | null = null;
@@ -72,7 +72,9 @@ const Page = (props: StandardPageProps) => {
           flexDirection: 'column',
           justifyContent: 'flex-start',
           alignItems: 'flex-start',
-          ...(dangerouslyOverrideInnerContentStyles ? dangerouslyOverrideInnerContentStyles.styles : {})
+          ...(dangerouslyOverrideInnerContentStyles
+            ? dangerouslyOverrideInnerContentStyles.styles
+            : {})
         }}
       >
         {contentEngine(

@@ -97,15 +97,38 @@ Image.args = {
 
 export const Grid = () => (
   <Container>
+    <Container asGridParent>
+      <Container
+        height={100}
+        asGridChild
+        colSpan={10}
+        background="purple"
+        radius="rounded"
+      />
+      <Container
+        height={100}
+        asGridChild
+        colSpan={2}
+        background="pink"
+        radius="rounded"
+      />
+    </Container>
 
     <Container asGridParent>
-      <Container height={100} asGridChild colSpan={10} background="purple" radius='rounded'/>
-      <Container height={100} asGridChild colSpan={2} background="pink" radius='rounded' />
-    </Container>
-    
-    <Container asGridParent>
-      <Container height={100} asGridChild colSpan={4} background="purple" radius='rounded'/>
-      <Container height={100} asGridChild colSpan={8} background="pink" radius='rounded' />
+      <Container
+        height={100}
+        asGridChild
+        colSpan={4}
+        background="purple"
+        radius="rounded"
+      />
+      <Container
+        height={100}
+        asGridChild
+        colSpan={8}
+        background="pink"
+        radius="rounded"
+      />
     </Container>
 
     <Container asGridParent>

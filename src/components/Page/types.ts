@@ -58,7 +58,23 @@ export type BasePage<T> = T & {
 } & NativeHellerSectionProps;
 
 type PageStyleCovenant = {
-  styles: Pick<Properties, 'width' | 'minWidth' | 'maxWidth' | 'height' | 'minHeight' | 'maxHeight' | 'textAlign' | 'font' | 'alignSelf' | 'alignItems' | 'alignContent' | 'justifyContent' | 'justifyItems' | 'justifySelf' >;
+  styles: Pick<
+    Properties,
+    | 'width'
+    | 'minWidth'
+    | 'maxWidth'
+    | 'height'
+    | 'minHeight'
+    | 'maxHeight'
+    | 'textAlign'
+    | 'font'
+    | 'alignSelf'
+    | 'alignItems'
+    | 'alignContent'
+    | 'justifyContent'
+    | 'justifyItems'
+    | 'justifySelf'
+  >;
 };
 
 export type MarkdownCustomComponentProps = {

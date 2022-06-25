@@ -87,7 +87,9 @@ const Page = (props: MarkdownPageProps) => {
           flexDirection: 'column',
           justifyContent: 'flex-start',
           alignItems: 'flex-start',
-          ...(dangerouslyOverrideInnerContentStyles ? dangerouslyOverrideInnerContentStyles.styles : {})
+          ...(dangerouslyOverrideInnerContentStyles
+            ? dangerouslyOverrideInnerContentStyles.styles
+            : {})
         }}
       >
         <ReactMarkdown
