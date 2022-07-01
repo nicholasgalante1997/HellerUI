@@ -64,11 +64,10 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-markdown": "^8.0.2",
+    "react-spring": "^9.2.5",
     "rehype-raw": "^6.1.1",
     "rehype-sanitize": "^5.0.1",
     "remark-gfm": "^3.0.1",
-    "styled-components": "^5.3.3",
-    "react-spring": "^9.2.5",
     "resolve-url-loader": "^4.0.0",
     "rollup": "^2.57.0",
     "rollup-plugin-analyzer": "^4.0.0",
@@ -83,6 +82,7 @@
     "sass": "^1.42.1",
     "sass-loader": "^10.1.1",
     "style-loader": "^2.0.0",
+    "styled-components": "^5.3.3",
     "ts-jest": "^27.0.5",
     "typescript": "^4.4.3"
   },
@@ -96,6 +96,7 @@
     "styled-components": "^5.3.3"
   },
   "dependencies": {
-    "color-scales": "^3.0.2"
+    "color-scales": "^3.0.2",
+    "url": "^0.11.0"
   }
 }
