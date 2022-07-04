@@ -9,7 +9,7 @@ import { visualizer } from 'rollup-plugin-visualizer';
 import analyze from 'rollup-plugin-analyzer';
 import packageJson from './package.json';
 
-export default {
+export default [{
   input: 'src/index.ts',
   output: [
     {
@@ -36,7 +36,7 @@ export default {
         'index.css',
       ],
     }),
-    resolve(),
+    resolve({ preferBuiltins: false }),
     commonjs(),
     typescript({
       tsconfigOverride: {
@@ -54,4 +54,4 @@ export default {
       template: 'sunburst',
     }),
   ],
-};
+}];

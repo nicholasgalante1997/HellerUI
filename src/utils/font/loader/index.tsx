@@ -3,29 +3,64 @@ import { useFontContext, FontContext } from './context';
 import {
   checkDOMTreeForLinkEl,
   createLinkElement,
-  destroyLinkElement
+  destroyLinkElement,
+  isValidHttpUrl
 } from './utils';
 
 /**
- * MAIN EXPORT
- */
-
-/**
- * mounts a link element to the dom on hook execution from within
- * the react component tree
- * @param fontObj
+ * @summary 
+ * @param fontUrl the href of the font file/css file you wish to load into your application
+ * @param fontKey a unique identifier for the link you are appending to the dom,
+ * 
  * @returns StateObject
  */
-const useExtraneousFont = (fontObj: string) => {
+const useExtraneousFont = (fontUrl: string, fontKey?: string) => {
   const [ready, setReady] = useState(false);
   const [failed, setFailed] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string>();
+
+  console.log('invoking extraneous font w ' + JSON.stringify({ fontUrl, fontKey }))
 
   useEffect(() => {
+    /**
+     * Begin Operations
+     */
     setLoading(true);
-    if (!checkDOMTreeForLinkEl(fontObj)) {
+    console.log(new URL(fontUrl).protocol === 'https:')
+    console.log('isValidHttpUrl:::' + isValidHttpUrl(fontUrl));
+    /**
+     * Validate fontUrl supplied by consumer
+     */
+    if (!isValidHttpUrl(fontUrl)) {
+      setFailed(true);
+      setError('INVALID URL FORMAT SUPPLIED');
+      setLoading(false);
+      return;
+    }
+
+   
+
+    /**
+     * Validate url contains query param `family=...:scale`
+     * or that a familyKey is supplied
+     * if not, return an error
+     */
+    if (!fontUrl.includes('family=') && !fontKey) {
+      setFailed(true);
+      setError('font identifier was not supplied, and could not be discerned from the url schema. Aborting operation.');
+      setLoading(false);
+      return;
+    }
+
+    /**
+     * if the link does NOT already exist in <head>
+     * 1. create a HtmlLinkElement
+     * 2. 
+     */
+    if (!checkDOMTreeForLinkEl(fontUrl, fontKey)) {
       try {
-        const e = createLinkElement(fontObj);
+        const e = createLinkElement(fontUrl, fontKey);
         document.head.appendChild(e);
         setLoading(false);
         setReady(true);
@@ -35,14 +70,14 @@ const useExtraneousFont = (fontObj: string) => {
       } catch (err: any) {
         setLoading(false);
         setFailed(true);
-        console.error('[useExtraneousFont]:::' + (err as Error).message);
+        setError('[useExtraneousFont]:::' + (err as Error).message);
       }
     } else {
       setLoading(false);
       setReady(true);
     }
-  }, []);
-  return { ready, failed, loading };
+  }, [fontKey, fontUrl]);
+  return { ready, failed, loading, error };
 };
 
 export { useExtraneousFont };

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useExtraneousFont } from '../../../utils/font/loader';
-import { fontMap } from '../../..//globals/fonts';
+import { fontMap } from '../../../globals/fonts';
 import { Loader } from '../../Loader';
 import { getTextElement } from './VarFont.styles';
 import { VarFontProps } from './types';
