@@ -1,4 +1,3 @@
-import { fontMap } from 'src/globals/fonts';
 import NODEURL from 'url';
 
 export function isValidHttpUrl(s: string) {
