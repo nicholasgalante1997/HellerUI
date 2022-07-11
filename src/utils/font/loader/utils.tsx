@@ -16,7 +16,6 @@ export function hasValidFamilyQueryParam (url: string) {
     if (
       urlObj.query?.family 
       && urlObj.query.family.length > 0
-      && urlObj.query.family.includes(':')
     ) {
       return true;
     }
@@ -35,10 +34,14 @@ export function transform(fontUrl: string, familyKey?: string) {
   if (!family) { throw new Error('MISSING FONT FAMILY') }
 
   let rVal = '';
+  const SAFE_CHAR_PATTERN = new RegExp(/[\d\w]/);
   for (let x = 0; x < family.length; x++) {
     const marker = family.charAt(x);
     let newCharCode = (marker.charCodeAt(0) + 1);
-    const char = String.fromCharCode(newCharCode);
+    let char = String.fromCharCode(newCharCode);
+    while(!SAFE_CHAR_PATTERN.test(char)) {
+      char = String.fromCharCode(newCharCode - 2);
+    }
     rVal += char;
   }
   return rVal;

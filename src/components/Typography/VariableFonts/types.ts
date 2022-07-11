@@ -1,5 +1,5 @@
 import { SafeReactFC, WithCustomStyles } from 'src/@types';
-import { fontMap } from 'src/globals/fonts';
+import fontblob from '../../../fontBlob.json';
 
 export type TextElementKeyType =
   | 'h1'
@@ -15,7 +15,7 @@ export type TextElementKeyType =
   | 'code';
 
 export type VarFontProps = {
-  fontKey: keyof typeof fontMap;
+  fontKey: keyof typeof fontblob;
   implementation: TextElementKeyType;
   weight?:
     | '100'

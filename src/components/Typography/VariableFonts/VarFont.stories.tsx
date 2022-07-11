@@ -19,7 +19,7 @@ const Template: Story<VarFontProps> = (args: VarFontProps) => (
 export const Default = Template.bind({});
 Default.args = {
   children: 'hello, is it me youre looking for?',
-  fontKey: 'rokkit',
+  fontKey: 'Acme---v18',
   implementation: 'h2',
   customStyles: {
     color: 'violet'

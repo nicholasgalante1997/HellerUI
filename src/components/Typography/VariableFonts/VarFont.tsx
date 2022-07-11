@@ -1,9 +1,13 @@
 import React from 'react';
+
+import fontBlob from '../../../fontBlob.json';
+
+import { GoogleFontUrlBuilder } from '../../../@types';
 import { useExtraneousFont } from '../../../utils/font/loader';
-import { fontMap } from '../../../globals/fonts';
 import { Loader } from '../../Loader';
 import { getTextElement } from './VarFont.styles';
 import { VarFontProps } from './types';
+
 
 const VarFont = (props: VarFontProps) => {
   const {
@@ -13,10 +17,11 @@ const VarFont = (props: VarFontProps) => {
     customStyles,
     weight = 500
   } = props;
-  const fontData = React.useMemo(() => fontMap[fontKey], [fontKey]);
+  const fontData = React.useMemo(() => fontBlob[fontKey], [fontKey]);
+  const fontInstance = new GoogleFontUrlBuilder(fontData.family, fontData.availableFontStyleVariants, fontData.meta)
+  const { ready, failed, loading } = useExtraneousFont(fontInstance.build());
 
-  const { fontFamilyBase, fontWeights, gUrl } = fontData;
-  const { ready, failed, loading } = useExtraneousFont(gUrl);
+   console.log(Object.keys(fontBlob))
 
   if (failed || loading) {
     <Loader />;
@@ -27,7 +32,7 @@ const VarFont = (props: VarFontProps) => {
     [implementation]
   );
   return (
-    <Component style={{ ...customStyles, fontFamily: fontFamilyBase }}>
+    <Component style={{ ...customStyles, fontFamily: fontInstance.family }}>
       {children}
     </Component>
   );

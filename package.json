@@ -17,6 +17,7 @@
     "build": "rollup -c",
     "clean": "rm -rf lib",
     "clean:deps": "rm -rf node_modules",
+    "font-scrape": "ts-node src/scripts/font/google/index.ts --project src/scripts/font/google/tsconfig.json",
     "prettier:fix": "prettier --write src/",
     "ch-update": "npx changeset",
     "release": "npm run build && npx changeset publish",

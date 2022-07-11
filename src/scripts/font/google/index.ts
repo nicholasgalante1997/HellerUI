@@ -1,4 +1,5 @@
 const fs = require('fs');
+const path = require('path');
 const dotenv = require('dotenv');
 require('isomorphic-fetch');
 
@@ -95,32 +96,57 @@ function transformGoogleFontResponse(arr: GoogleFontApiItem[]) {
 }
 
 function cleanJSONBlob(){
+    console.log('beginning cleaning operations \n');
     let succeeded = true;
+    const filepath = path.resolve(process.cwd(), 'src', 'fontBlob.json')
     try {
-        fs.rmSync('fontBlob.json');
+        console.log(`attempting to clean path ${filepath}`)
+        fs.rmSync(filepath);
     } catch (e: any) { 
         console.error((e as Error).message);
         succeeded = false;
     } finally {
+        console.log('operation complete - status of cleaning operation\nWas file deleted? ' + succeeded);
         return succeeded;
     }
 }
 
 function writeOutFontBlob(o: Object){
-    fs.writeFileSync('fontBlob.json', new Buffer(JSON.stringify(o), 'utf-8'), { encoding: 'utf-8' });
+    console.log('beginning writing operations')
+    let succeeded = true;
+    try {
+        const filename = path.resolve(process.cwd(), 'src', 'fontBlob.json');
+        console.log('writing out to ' + filename)
+        fs.writeFileSync(filename, Buffer.from(JSON.stringify(o), 'utf-8'), { encoding: 'utf-8' });
+    } catch(e: any) {
+        console.error((e as Error).message);
+        succeeded = false;
+    } finally {
+        console.log('operation complete - status of writing operation\nWas file created? ' + succeeded);
+        return succeeded;
+    }
+    
 }
 
 async function run() {
+    let succeeded = true;
     try {
+        console.log('beinning `run()` invocation in /src/scripts/font/google/index.ts')
+        console.log('beginning scraping...')
         const fontArray = await scrapeGoogleFontList();
         if (!Array.isArray(fontArray)) { throw new Error('failed at font list scrape') }
+        console.log('scraping complete!')
+        console.log('Beginning transformation of font objects...')
         const dto = transformGoogleFontResponse(fontArray);
+        console.log('transformation complete!')
         cleanJSONBlob();
         writeOutFontBlob(dto);
     } catch (e: any) {
         console.warn((e as Error).message)
+        succeeded = false;
+    } finally {
+        console.log('run() invocation complete - status of run fn call stack\nWas run successful? ' + succeeded);;
     }
-    
-}
+};
 
 run();
