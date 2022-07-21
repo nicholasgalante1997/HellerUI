@@ -7,6 +7,7 @@ import postcss from 'rollup-plugin-postcss';
 import copy from 'rollup-plugin-copy-assets';
 import { visualizer } from 'rollup-plugin-visualizer';
 import analyze from 'rollup-plugin-analyzer';
+import json from '@rollup/plugin-json';
 import packageJson from './package.json';
 
 export default [{
@@ -28,12 +29,14 @@ export default [{
       targets: ['./lib'],
     }),
     peerDepsExternal(),
+    json(),
     copy({
       assets: [
         // You can include directories with the `copy` plugin
         'assets',
         'themes',
         'index.css',
+        'fontBlob.json'
       ],
     }),
     resolve({ preferBuiltins: false }),

@@ -6,80 +6,54 @@
 
 ![Hi Everybody!](https://c.tenor.com/ny2kroyiSI4AAAAC/hi-everybody-simpsons.gif)
 
-I hope you are having a great night! As i should have mentioned much earlier, this react component library/ui-kit is very much so a work in progress! Moving forward, all versions until _release_ will be versioned under 1.0.0. That means that the most up to date version at the time of writing is 0.0.32! If you are on that version, you are killing it!
+LOOK HERE! IM IN CAPS! **THIS IS A PRERELEASE PACKAGE**
 
-If you'd like to leave feedback about the package, please feel free to raise an issue on our github!
-
-Right now components that are available for consumption are:
-
-- Typography (Heading & Paragraph)
-- Button
-- Container
-- MediaTitle
-- Page
-- Markdown Page
-- themed-css\*
-
-##### Installation
-
-> heller ui relies on styled-components for runtime style injection as well as react-markdown, and several markdown plugins to create the markdown renderer page component. In totality, the installation of the below packages results in an addition of less than 2 mb to your package. If size is everything to you, and motion means nothing, then we have current works in development to allow for the consumption of this package as a remotely hosted collection of federated modules. Stay tuned for updated on how to use hellerui with module federation.
-
+##### install stuff 
 
 To get started, run
 
-```npx
-npm install @nickgdev/hellerui styled-components react-markdown remark-gfm rehype-raw rehype-sanitize
-```
+`npm install @nickgdev/hellerui styled-components react-markdown remark-gfm rehype-raw rehype-sanitize`
 
 or
 
-```yarn
-yarn add @nickgdev/hellerui styled-components react-markdown remark-gfm rehype-raw rehype-sanitize
-```
+`yarn add @nickgdev/hellerui styled-components react-markdown remark-gfm rehype-raw rehype-sanitize`
 
----
-##### Example Usage
+> We've got cooler stuff for you now. It's only getting better.
 
-```typescript
+This is a pre-release library of components. This is what we have to offer you.
 
-import React from 'react';
-import { Typography } from '@nickgdev/hellerui';
-import '@nickgdev/hellerui/lib/index.css'
-
-const { Heading, Paragraph } = Typography;
-
-const MyPage = () => {
-    return (
-      <section>
-         <Heading as="h1" color="violet">Heller UI!</Heading>
-         <Paragraph italic>Thats some catch!</Paragraph>
-      <section>
-    );
-};
-
-```
-
----
-##### heller as a templated page engine
-
-This is lo and behold the best thing that heller offers (my opinion). We've wanted to create a component that could allow for the rapid development of content driven websites,
-like docs sites or blog sites. We offer to you, the Heller Page. Right now it has two implementations, one that accepts text/jsx as content, and one that accepts markdown as content. I could tell you why the pages are awesome, but its better to show you!  
-
-> Below is an image of a Heller Page being used as a markdown engine, and we've also included the code so you can see just how easy it is to use/implement
-
-[View in Github](https://github.com/nicholasgalante1997/HellerUI/blob/master/README.md)
-
-![Heller Markdown Page](/src/assets/md-page.png)
-![Heller Markdown Page](/src/assets/md-page-code.png)
-
+##### OmniFont (until a better name reveals itself!)
 ---
 
-### Heller UI Storybook is open access on Chromatic now!
+Short Synopsis
 
-Are you thinking to yourself?
+> This is a 'use-everywhere' text component. You legit can use it everywhere. We run daily scrapes of the google font api https://fonts.google.com/ where we fetch metadata for the font-families it provides. Then we use a hook (we forked react-font-loader https://www.npmjs.com/package/react-font-loader and made some tweaks, converted it to TS and wrote tests and whatnot) to create and append all the link tags you need to the dom to pull in the families of your choice. We type the list daily so you get autocompletion on all google font families, and we expose the fontBlob in the dist build if you'd like to tweak it/our implementation to your needs. 
 
-_Is this package something **I** want to install?_
+**Try it out here!** 
 
-Well now you can fiddle around with our SB instance and see if it fits your use case.
+[!storybook instance](https://615213bb7c9f60003aa5ec0d-koqepqgxho.chromatic.com/?path=/docs/typography-varfont--default)
 
-[hellerui](https://615213bb7c9f60003aa5ec0d-kzmwhjocta.chromatic.com/?path=/story/button--default)
+##### HellerPages 
+--- 
+
+Short Synopsis
+
+> This is for the people that want to spin up markdown websites in seconds. No joke seconds. You can embed your own components in the body, you can theme it, you can write a ton of markdown in a string and pass it that and then tweak the markdown component implementation to whatever youd like or leave it with our defaults even, which are styles out of the box! We're as proud of this one as the OmniFont guy above it. Its also the reason you have to install so many packages to work w us. We mentioned that last.
+
+**Try it out here**
+
+[!storybook instance](https://615213bb7c9f60003aa5ec0d-koqepqgxho.chromatic.com/?path=/docs/page-renderer-markdown-page--content-as-string)
+
+### Other components we offer!
+---
+
+Available for consumption now (also in the linked storybook)
+
+[!storybook instance](https://615213bb7c9f60003aa5ec0d-koqepqgxho.chromatic.com/?path=/docs/button--default)
+
+- Alert 
+- Button
+- Container
+- Loader
+- MediaTitle
+- Set Typography

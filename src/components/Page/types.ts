@@ -33,7 +33,7 @@ export type MarkdownPageProps = SafeReactFC<
     Omit<
       BasePage<{
         content: string;
-        customComponentMap: Record<string, ComponentType>;
+        customComponentMap?: Record<string, ComponentType>;
       }>,
       'contentEngine'
     >
