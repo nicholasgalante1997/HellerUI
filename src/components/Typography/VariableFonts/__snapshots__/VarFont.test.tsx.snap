@@ -1,0 +1,156 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`VariableFont default 1`] = `
+<div>
+  <h2
+    class="sc-dkzDqf"
+    style="font-family: Sarala;"
+  >
+    chief and dumpling
+  </h2>
+</div>
+`;
+
+exports[`VariableFont forwards styles 1`] = `
+<div>
+  <h2
+    class="sc-dkzDqf"
+    data-testid="varfont"
+    style="font-style: italic; font-family: Sarala;"
+  >
+    chief and dumpling
+  </h2>
+</div>
+`;
+
+exports[`VariableFont implementations 1`] = `
+<div>
+  <b
+    class="sc-papXJ"
+    data-testid="varfont"
+    style="font-family: Sarala;"
+  >
+    chief and dumpling
+  </b>
+</div>
+`;
+
+exports[`VariableFont implementations 2`] = `
+<div>
+  <p
+    class="sc-iBkjds"
+    data-testid="varfont"
+    style="font-family: Sarala;"
+  >
+    chief and dumpling
+  </p>
+</div>
+`;
+
+exports[`VariableFont implementations 3`] = `
+<div>
+  <h1
+    class="sc-gsnTZi"
+    data-testid="varfont"
+    style="font-family: Sarala;"
+  >
+    chief and dumpling
+  </h1>
+</div>
+`;
+
+exports[`VariableFont implementations 4`] = `
+<div>
+  <h2
+    class="sc-dkzDqf"
+    data-testid="varfont"
+    style="font-family: Sarala;"
+  >
+    chief and dumpling
+  </h2>
+</div>
+`;
+
+exports[`VariableFont implementations 5`] = `
+<div>
+  <h3
+    class="sc-hKMtZM"
+    data-testid="varfont"
+    style="font-family: Sarala;"
+  >
+    chief and dumpling
+  </h3>
+</div>
+`;
+
+exports[`VariableFont implementations 6`] = `
+<div>
+  <h4
+    class="sc-eCYdqJ"
+    data-testid="varfont"
+    style="font-family: Sarala;"
+  >
+    chief and dumpling
+  </h4>
+</div>
+`;
+
+exports[`VariableFont implementations 7`] = `
+<div>
+  <h5
+    class="sc-jSMfEi"
+    data-testid="varfont"
+    style="font-family: Sarala;"
+  >
+    chief and dumpling
+  </h5>
+</div>
+`;
+
+exports[`VariableFont implementations 8`] = `
+<div>
+  <h6
+    class="sc-gKXOVf"
+    data-testid="varfont"
+    style="font-family: Sarala;"
+  >
+    chief and dumpling
+  </h6>
+</div>
+`;
+
+exports[`VariableFont implementations 9`] = `
+<div>
+  <p
+    class="sc-iBkjds"
+    data-testid="varfont"
+    style="font-family: Sarala;"
+  >
+    chief and dumpling
+  </p>
+</div>
+`;
+
+exports[`VariableFont implementations 10`] = `
+<div>
+  <i
+    class="sc-ftvSup"
+    data-testid="varfont"
+    style="font-family: Sarala;"
+  >
+    chief and dumpling
+  </i>
+</div>
+`;
+
+exports[`VariableFont implementations 11`] = `
+<div>
+  <span
+    class="sc-kDDrLX"
+    data-testid="varfont"
+    style="font-family: Sarala;"
+  >
+    chief and dumpling
+  </span>
+</div>
+`;

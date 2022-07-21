@@ -6,6 +6,8 @@ type FontCacheStruct = {
   node: HTMLLinkElement;
 };
 
+/** WIP @nickgalante */
+
 interface FontContextInterface {
   cache: {
     [x: string]: FontCacheStruct;

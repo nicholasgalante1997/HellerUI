@@ -1,7 +1,7 @@
 {
-    "extends": "../../../../tsconfig.json",
-    "compilerOptions": {
-        "isolatedModules": false,
-    },
-    "include": ["./index.ts"]
+  "extends": "../../../../tsconfig.json",
+  "compilerOptions": {
+    "isolatedModules": false
+  },
+  "include": ["./index.ts"]
 }

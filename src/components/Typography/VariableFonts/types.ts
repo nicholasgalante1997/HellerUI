@@ -17,14 +17,7 @@ export type TextElementKeyType =
 export type VarFontProps = {
   fontKey: keyof typeof fontblob;
   implementation: TextElementKeyType;
-  weight?:
-    | '100'
-    | '200'
-    | '300'
-    | '400'
-    | '500'
-    | '600'
-    | '700'
-    | '800'
-    | '900';
+  accessiblility?: {
+    bionic?: boolean;
+  };
 } & SafeReactFC<WithCustomStyles<{}>>;

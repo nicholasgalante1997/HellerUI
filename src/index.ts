@@ -5,6 +5,7 @@ export * from './components/Button';
 export * from './components/Break';
 export * from './components/Divider';
 export * as Typography from './components/Typography';
+export * from './components/Typography/VariableFonts';
 
 /** Layout */
 export { default as Container } from './components/Container';

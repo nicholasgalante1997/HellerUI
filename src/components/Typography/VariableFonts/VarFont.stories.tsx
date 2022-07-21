@@ -19,9 +19,12 @@ const Template: Story<VarFontProps> = (args: VarFontProps) => (
 export const Default = Template.bind({});
 Default.args = {
   children: 'hello, is it me youre looking for?',
-  fontKey: 'Acme---v18',
+  fontKey: 'ABeeZee - v22',
   implementation: 'h2',
   customStyles: {
     color: 'violet'
+  },
+  accessiblility: {
+    bionic: true
   }
 };
