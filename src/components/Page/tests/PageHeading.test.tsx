@@ -82,4 +82,12 @@ describe('Page Heading Component', () => {
     const arr = Array.from(document.querySelectorAll('hr'));
     expect(arr.length).toBe(0);
   });
+  test('PageHeading override', () => {
+    const { queryByTestId } = render(<PageHeading title='' dangerouslyOverridePageHeading={{ headingNode: <div data-testid="override">ov</div>}}/>);
+    const overrideHeading = queryByTestId('override');
+    expect(overrideHeading).not.toBeNull();
+    expect(overrideHeading).toBeInTheDocument();
+    expect(overrideHeading).toHaveTextContent('ov');
+    expect(overrideHeading).toMatchSnapshot();
+  })
 });

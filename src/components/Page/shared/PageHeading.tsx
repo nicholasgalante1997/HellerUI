@@ -15,6 +15,7 @@ type PageHeadingProps = Pick<
   | 'withActionBar'
   | 'withDividers'
   | 'dividerProps'
+  | 'dangerouslyOverridePageHeading'
   | 'title'
   | 'titleColor'
   | 'subtitle'
@@ -27,13 +28,20 @@ const PageHeading = ({
   withActionBar,
   withDividers,
   dividerProps,
+  dangerouslyOverridePageHeading,
   title,
   titleColor,
   subtitle,
   subtitleColor,
   subtitleSize,
   titleSize
-}: PageHeadingProps) => (
+}: PageHeadingProps) => {
+
+  if (dangerouslyOverridePageHeading?.headingNode) {
+    return dangerouslyOverridePageHeading.headingNode
+  }
+
+  return (
   <>
     {/* Action Bar */}
     {withActionBar ? (
@@ -71,6 +79,7 @@ const PageHeading = ({
       <Break height="1.5rem" />
     )}
   </>
-);
+)
+    };
 
 export default PageHeading;

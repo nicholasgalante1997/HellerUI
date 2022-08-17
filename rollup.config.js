@@ -43,7 +43,7 @@ export default [{
     commonjs(),
     typescript({
       tsconfigOverride: {
-        exclude: ['**/*.stories.tsx', '**/*.test.tsx'],
+        exclude: ['**/*.stories.tsx', '**/*.test.tsx', '**/*.test.ts'],
       },
     }),
     postcss(),

@@ -55,6 +55,7 @@ export type BasePage<T> = T & {
   contentEngine?: 'normal' | 'markdown';
   theme?: HellerPageTheme;
   dangerouslyOverrideInnerContentStyles?: PageStyleCovenant;
+  dangerouslyOverridePageHeading?: PageHeadingCovenant;
 } & NativeHellerSectionProps;
 
 type PageStyleCovenant = {
@@ -76,6 +77,10 @@ type PageStyleCovenant = {
     | 'justifySelf'
   >;
 };
+
+type PageHeadingCovenant = {
+  headingNode: JSX.Element;
+}
 
 export type MarkdownCustomComponentProps = {
   node: Element;
