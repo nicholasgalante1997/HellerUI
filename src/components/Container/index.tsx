@@ -90,7 +90,7 @@ const Container = (props: ContainerProps) => {
   // container as grid
   if (asGridParent) {
     nativeStyles.width = '100%';
-    nativeStyles.margin = '-4px 0px 0px -4px';
+    nativeStyles.margin = '0px 0px 0px 0px';
     nativeStyles.boxSizing = 'border-box';
     nativeStyles.flexWrap = 'nowrap';
     return (
@@ -119,7 +119,7 @@ const Container = (props: ContainerProps) => {
       );
     } else {
       nativeStyles.width = `${Math.floor((colSpan / rows) * 100).toString()}%`;
-      nativeStyles.margin = '4px 0px 0px 4px';
+      nativeStyles.margin = '0px 0px 0px 0px';
       nativeStyles.boxSizing = 'border-box';
     }
   }
