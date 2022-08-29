@@ -28,7 +28,8 @@ const Page = (props: StandardPageProps) => {
     content,
     contentTextColor = defaultColor,
     theme = 'none',
-    dangerouslyOverrideInnerContentStyles
+    dangerouslyOverrideInnerContentStyles,
+    dangerouslyOverridePageHeading
   } = props;
 
   let mainThemeColor: string | null = null;
@@ -60,6 +61,7 @@ const Page = (props: StandardPageProps) => {
         subtitleSize={subtitleSize}
         withActionBar={withActionBar}
         titleSize={titleSize}
+        dangerouslyOverridePageHeading={dangerouslyOverridePageHeading}
       />
 
       {/* Page Content */}
