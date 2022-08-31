@@ -4,10 +4,7 @@
 /* eslint-disable max-len */
 /* eslint-disable no-undef */
 import React from 'react';
-import ReactMarkdown from 'react-markdown';
-import remarkGfm from 'remark-gfm';
-import rehypeRaw from 'rehype-raw';
-import rehypeSanitize from 'rehype-sanitize';
+import ReactMarkdown from 'react-markdown';;
 import * as Font from '../../Typography';
 import Container from '../../Container';
 import type { MarkdownPageProps } from '../types';
@@ -226,8 +223,6 @@ const Page = (props: MarkdownPageProps) => {
             hr: () => <HellerDivider {...dividerProps} />,
             ...customComponentMap
           }}
-          remarkPlugins={[remarkGfm]}
-          rehypePlugins={[[rehypeRaw], [rehypeSanitize]]}
           unwrapDisallowed
         />
       </Container>
